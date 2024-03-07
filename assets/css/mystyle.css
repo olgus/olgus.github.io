@@ -1,0 +1,36 @@
+---
+---
+h1 {
+    color: green;
+  }
+
+body {
+  min-height: 200vh;
+}
+
+.container {
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+.container::-webkit-scrollbar { /* WebKit */
+  width: 0;
+  height: 0;
+}
+
+.customAnimation {
+    position: fixed;
+    width: 128px;
+    height: 128px;
+    background: url('../images/Selection.png') left center;
+    animation-name: play; 
+    animation-duration: 0.8s;
+    animation-timing-function: steps(4);
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+    animation-delay: calc(var(--scroll) * -1s);
+  } 
+
+@keyframes play {
+    100% { background-position: -512px; }
+ }

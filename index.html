@@ -1,1 +1,27 @@
-"Hello world"
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+layout: none
+food: Pizza
+---
+
+<!doctype html>
+<html class="container">
+<head>
+<link rel="stylesheet" href="assets/css/mystyle.css">
+</head>
+<body class="container">
+
+<script>
+    window.addEventListener('scroll', () => { document.body.style.setProperty('--scroll', window.pageYOffset / (document.body.offsetHeight - window.innerHeight));}, false);
+</script>
+
+<h1>{{ page.food }}</h1>
+
+<a href="./Projects/productivityTimer.html">Projects</a>
+
+<div class="customAnimation"></div>
+
+</body>
+</html> 
