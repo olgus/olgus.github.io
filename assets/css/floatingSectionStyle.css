@@ -1,0 +1,110 @@
+---
+---
+
+.floating-section {
+	float: right;
+	position: relative;
+	max-width: 500px;
+	max-height: 500px;
+	min-width: 100px;
+	min-height: 100px;
+	animation: bopping-animation 0.5s ease-in-out 0s infinite alternate both;
+}
+
+.top-left-corner{
+    background: url("../images/Floating_section/top-left-corner.png");
+    height: 12px;
+    width: 12px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    align-items: stretch;
+}
+
+.top-right-corner{
+    background: url("../images/Floating_section/top-right-corner.png");
+    height: 12px;
+    width: 12px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.bottom-right-corner{
+    background: url("../images/Floating_section/bottom-right-corner.png");
+    height: 12px;
+    width: 12px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+.bottom-left-corner{
+    background: url("../images/Floating_section/bottom-left-corner.png");
+    height: 12px;
+    width: 12px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+.horizontal-straight{
+    background: url("../images/Floating_section/horizontal-straight.png");
+    height: 8px;
+    width: calc(100% - 24px);
+    position: absolute;
+    background-repeat: repeat-x;
+}
+
+.vertical-straight{
+    background: url("../images/Floating_section/vertical-straight.png");
+    height: calc(100% - 24px);
+    width: 8px;
+    position: absolute;
+    background-repeat: repeat-y;
+}
+
+.triangle {
+	background: url("../images/Floating_section/triangle.png");
+	width: 14px;
+	height: 14px;
+	position: absolute;
+	top: auto;
+	left: 16%;
+	bottom: -12px;
+}
+
+.top{
+    position: absolute;
+    left: 12px;
+    top: 0px;
+}
+
+.bottom{
+    position: absolute;
+    left: 12px;
+    bottom: 0px;
+}
+
+.left{
+    position: absolute;
+    left: 0px;
+    top: 12px;
+}
+
+.right{
+    position: absolute;
+    right: 0px;
+    top: 12px;
+}
+
+.floating-text{
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+@keyframes bopping-animation {
+    from { top: 0px; };
+    to { top: -10px; };
+}

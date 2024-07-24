@@ -1,27 +1,598 @@
 ---
 ---
-body{
-  background-color: gold;
+:root {
+    --vm-background-color: rgb(185, 216, 255);
+	--vm-bottom-color: #E5ADE6;
+    --vm-contrast-color: rgb(185, 0, 255);
+
+	--textLength: 119;
 }
 
 body, html{
-  margin:0;
-  padding:0;
-}
-
-.header-image {
-  width: 100%;
   margin: 0;
   padding: 0;
-  position: relative;
+  background-color: var(--vm-background-color);
+  height: 100%;
+  width: 100%;
+
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-.content {
-    font-family: "Copperplate";
-    font-size: 1em;
-    color: black;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    margin-right: 80px;
-    margin-left: 80px;
+.container-h { 
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	overflow: hidden;
+	flex-direction: column;
+	height: 100%;
+}
+
+.container-v { 
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.container-v-top{
+	align-items: flex-end;
+}
+
+.container-v-bottom{
+	height: 100%;
+}
+/* flex section start */
+.top-free-space{
+	width: 100%;
+	flex: 1 1 0px;
+	
+	background-color: var(--vm-background-color);
+	z-index: 5;
+	overflow: hidden;
+	align-content: flex-end;
+}
+
+.bottom-free-space{
+	width: 100%;
+	flex: 1 1 0px;
+	
+	background-color: var(--vm-background-color);
+	z-index: 5;
+}
+
+.left-free-space{
+	width: 31px;
+	height: 100%;
+
+	background-color: var(--vm-background-color);
+	z-index: 5;
+}
+
+.cat-top {
+	width: 1510px;
+	height: 122px;
+	background: url('../images/VendingMachine_2x.png') -529px 0px; 
+	position: absolute;
+}
+
+.vm-bottom{
+	width: 1541px;
+	height: 100%;
+	background: url('../images/vmBottom.png');
+	background-repeat: repeat-y;
+}
+/* flex sections end */
+
+/* grid starts */
+.grid-containter{
+	display: grid;
+	grid-template-columns: auto auto auto;
+	grid-template-rows: auto auto auto;
+	height: 100%;
+	justify-content: center;
+}
+
+.grid-filler-row{
+	grid-row: 1 / span 3; 
+	width: auto;
+	height: auto;
+}
+
+.grid-filler-item{
+	width: auto;
+	height: auto;
+}
+
+.grid-center-item{
+	grid-column: 2 / span 1; 
+	grid-row: 2 / span 1; 
+	width: auto;
+	height: auto;
+}
+/* grid ends */
+
+.bg{
+  background-color: var(--vm-background-color);
+  height: 703px;
+  width: 1541px;
+  position: relative;
+  margin: auto;
+}
+
+/* stock starts */
+.stock {
+	width: 1510px;
+	height: 900px;
+	/* background: url('../images/VendingMachine_2x.png') -529px 0px; */
+	background: url('../images/VendingMachine_2x.png') -529px -123px; /* -31 +123 */
+	/* animation: walk-in-animation-stock 2s ease-out 0s 1 normal forwards; */
+	transform-origin: 50% 0%;
+  	position: relative;
+}
+
+@keyframes walk-in-animation-stock {
+	from { transform: scale(0.9, 0.9); }
+	to { transform: scale(1, 1); }
   }
+/* stock ends */
+
+/* sakura branches start */
+.top-sakura-branch {
+	width: 551px;
+	height: 253px;
+	background: url('../images/VendingMachine_2x.png') -374px -1188px;
+	position: relative;
+	top: -229px;
+	left: -100px;
+  	animation: sakura-branch-animation 2s ease-out 0s 1 normal forwards;
+	transform-origin: 0% 50%;
+	z-index: 10;
+}
+
+.top-sakura-branch-shadow {
+	width: 418px;
+	height: 229px;
+	background: url('../images/VendingMachine_2x.png') -911px -1695px;
+	position: relative;
+	top: 47px;
+	left: 26px;
+	animation: sakura-branch-animation 2s ease-out 0s 1 normal forwards, 
+	top-sakura-branch-shadow-animation 2s ease-out 0s 1 normal forwards;
+	transform-origin: 0% 50%;
+	z-index: 2;
+}
+
+.bottom-sakura-branch {
+	width: 517px;
+	height: 256px;
+	background: url('../images/VendingMachine_2x.png') -928px -1185px;
+	position: relative;
+	top: -287px;
+	left: -90px;
+	animation: sakura-branch-animation 2s ease-out 0s 1 normal forwards;
+	transform-origin: 0% 50%;
+	z-index: 10;
+}
+
+.bottom-sakura-branch-shadow {
+	width: 415px;
+	height: 232px;
+	background: url('../images/VendingMachine_2x.png') -492px -1695px;
+	position: relative;
+	top: 21px;
+	left: 0px;
+	animation: sakura-branch-animation 2s ease-out 0s 1 normal forwards, bottom-sakura-branch-shadow-animation 2s ease-out 0s 1 normal forwards;
+	transform-origin: 0% 50%;
+	z-index: 2;
+}
+
+.sakura-branches{
+	height: 100%;
+	overflow-y: hidden;
+	position: absolute;
+	pointer-events: none;
+	width: 100%;
+}
+
+@keyframes sakura-branch-animation {
+  from { transform: scale(1.4, 1.4); }
+  to { transform: scale(1, 1); }
+}
+
+@keyframes top-sakura-branch-shadow-animation{
+	from { width: 371px; background-position-x: -958px; }
+	to { width: 418px;  background-position-x: -911px; }
+}
+
+@keyframes bottom-sakura-branch-shadow-animation{
+	from { width: 363px; background-position-x: -544px;  }
+	to { width: 415px;  background-position-x: -492px; }
+}
+
+.shadow-cover{
+	background-color: var(--vm-background-color);
+	width: 100px;
+	height: 100%;
+	flex: 1 1 0px;
+	z-index: 5;
+}
+/* sakura branches end */
+
+/* product display starts */
+.product-display-light-reflection {
+	width: 472px;
+	height: 422px;
+	background: url('../images/VendingMachine_2x.png') -1448px -1066px;
+	position: absolute;
+	top: 151px;
+	left: 454px;
+	z-index: 10;
+  	pointer-events: none;
+}
+/* product display ends */
+
+/* cat tail starts */
+.cat-tail {
+	height: 153px;
+	width: 171px;
+	background: url('../images/Cat_tail.png') 0px 0px;
+	animation: steps(11) 1.5s infinite 2s cat-tail-animation;
+	/* walk-in-animation-stock 2s ease-out 0s 1 normal forwards; */
+	position: absolute;
+	top: 28px;
+	left: 1175px;
+	transform-origin: 50% 0%;
+}
+
+@keyframes cat-tail-animation{
+	0%  {background-position-x: 0px;}
+	100% {background-position-x: -1892px;}
+}
+
+.tail-reflection {
+	top: 70px;
+	left: 1186px;
+	opacity: 35%;
+	background: url('../images/Cat_tail.png') 0px -43px;
+	height: 110px;
+}
+/*cat tail ends */
+
+/* light pole starts */
+.light-pole-block {
+	z-index: 20;
+	position: absolute;
+	left: auto;
+	right: 10px;
+	top: 0px;
+	height: 100%;
+	overflow: hidden;
+	box-sizing: border-box;
+	padding-left: 12px;
+	padding-right: 11px;
+}
+
+.light-pole {
+	width: 147px;
+	height: 957px;
+	background: url('../images/VendingMachine_2x.png') -0px -83px;
+	animation: walk-in-animation-pole 2s ease-out 0s 1 normal forwards;
+	transform-origin: 50% 50%;
+}
+
+.light-pole-bottom {
+	background: url('../images/light-pole-bottom.png');
+	background-repeat: repeat-y;
+	animation: walk-in-animation-pole 2s ease-out 0s 1 normal forwards;
+	transform-origin: 50% 50%;
+	height: 100%;
+	margin-left: 9px;
+}
+
+@keyframes walk-in-animation-pole {
+	from { transform: scale(1.2, 1.2); left: 1420px; }
+	to { transform: scale(1, 1); left: 1387px; }
+  }
+/* light pole ends */
+
+/* coin slot starts */
+.coin-slot {
+	left: 338px;
+	top: 494px;
+	position: absolute;
+	width: 23px;
+	height: 48px;
+	overflow: hidden;
+}
+
+.coin {
+	width: 23px;
+	height: 47px;
+	background: url('../images/VendingMachine_2x.png') -0px -1896px;
+	position: absolute;
+	animation: insert-coin-animation calc(var(--scroll) * 1s) linear 2s infinite normal forwards;
+}
+
+@keyframes insert-coin-animation {
+	from { left: 0px; }
+	to { left: -30px; }
+}
+
+.scrollable-overlay{
+	height: 1000vh;
+	border: 1px solid red;
+	width: 100%;
+	z-index: 50;
+	position: absolute;
+	overflow: scroll;
+	pointer-events: none;
+}
+/* coin slot ends */
+
+/* productivity timer starts */
+.productivity-timer {
+	width: 91px;
+	height: 173px;
+	position: absolute;
+	top: 102px;
+	left: 504px;
+}
+
+.productivity-timer-highlight {
+	width: 94px;
+	height: 175px;
+	background: url('../images/VendingMachine_2x.png') -1357px -1695px;
+}
+/* productivity timer ends */
+
+/* pen guin bot starts */
+.pen-guin-bot {
+	width: 119px;
+	height: 209px;
+	position: absolute;
+	top: 66px;
+	left: 628px;
+}
+
+.pen-guin-bot-highlight {
+	width: 118px;
+	height: 208px;
+	background: url('../images/VendingMachine_2x.png') -1455px -1694px;
+}
+/* pen guin bot ends */
+
+/* shopping app placeholder starts */
+.shopping-app-placeholder {
+	width: 119px;
+	height: 209px;
+	position: absolute;
+	top: 61px;
+	left: 758px;
+}
+
+.shopping-app-placeholder-highlight {
+	width: 112px;
+	height: 209px;
+	background: url('../images/VendingMachine_2x.png') -1577px -1695px;
+}
+/* shopping app placeholder ends */
+
+/* item in stock light starts */
+.light-item-in-stock {
+	width: 102px;
+	height: 46px;
+	background: url('../images/VendingMachine_2x.png') -1693px -1697px;
+}
+
+.productivity-timer-light-icon {
+	left: 498px;
+	position: absolute;
+}
+
+.pen-guin-bot-light-icon {
+	left: 632px;
+	position: absolute;
+}
+/* item in stock light ends */
+
+/* item out of stock light starts */
+.light-item-out-of-stock {
+	width: 102px;
+	height: 48px;
+	background: url('../images/VendingMachine_2x.png') -1693px -1747px;
+	position: absolute;
+}
+
+.top-shelf{
+	top: 260px;
+}
+
+.light-item-out-of-stock-top-shelf-1 {
+	left: 767px;
+}
+
+.light-item-out-of-stock-top-shelf-2 {
+	left: 901px;
+}
+
+.light-item-out-of-stock-top-shelf-3 {
+	left: 1033px;
+}
+
+.light-item-out-of-stock-top-shelf-4 {
+	left: 1162px;
+}
+
+.light-item-out-of-stock-top-shelf-5 {
+	left: 1287px;
+}
+
+.light-item-bottom-shelf {
+	top: 486px;
+}
+
+.light-item-out-of-stock-bottom-shelf-1 {
+	left: 499px;
+}
+
+.light-item-out-of-stock-bottom-shelf-2 {
+	left: 632px;
+}
+
+.light-item-out-of-stock-bottom-shelf-3 {
+	left: 767px;
+}
+
+.light-item-out-of-stock-bottom-shelf-4 {
+	left: 900px;
+}
+
+.light-item-out-of-stock-bottom-shelf-5 {
+	left: 1035px;
+}
+
+.light-item-out-of-stock-bottom-shelf-6 {
+	left: 1164px;
+}
+
+.light-item-out-of-stock-bottom-shelf-7 {
+	left: 1287px;
+}
+
+.light-blink{
+	animation: light-blink-animation 5s linear 0s infinite normal forwards;
+}
+
+@keyframes light-blink-animation {
+	0% { opacity: 100%; }
+	20% { opacity: 100%; }
+	21% { opacity: 0%; }
+	29% { opacity: 0%; }
+	30% { opacity: 100%; }
+	100% { opacity: 100%; }
+}
+/* item out of stock light ends */
+
+/* links start */
+.email-highlight {
+	width: 215px;
+	height: 147px;
+	background: url('../images/VendingMachine_2x.png') -148px -0px;
+	position: relative;
+	top: 83px;
+	left: -12px;
+}
+
+.github-highlight {
+	width: 145px;
+	height: 197px;
+	background: url('../images/VendingMachine_2x.png') -148px -148px;
+	position: relative;
+	top: 62px;
+	left: 8px;
+}
+
+.linkedin-highlight {
+	width: 59px;
+	height: 127px;
+	background: url('../images/VendingMachine_2x.png') -148px -350px;
+	position: relative;
+	top: 67px;
+	left: -2px;
+}
+
+.cv-pdf-highlight {
+	width: 143px;
+	height: 183px;
+	background: url('../images/VendingMachine_2x.png') -148px -478px;
+	position: relative;
+	top: 62px;
+	left: 0px;
+}
+/* links end */
+
+/* display starts */
+.display {
+	position: relative;
+	width: 325px;
+	height: 274px;
+	top: 159px;
+	left: 76px;
+	overflow: hidden;
+}
+
+.display-text-field {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	box-sizing: border-box;
+	padding: 12px;
+	padding-right: 20px;
+	text-align: justify;
+}
+
+.typewriter-effect{
+	font: 24px 'VT323', monospace; /*TODO for the whole document?*/
+	/* font-weight: 600; */
+	background: linear-gradient(-90deg, #FEC0EBFF 10px, #0000 0) 
+	  15px 21px/calc(var(--textLength)*1ch) 3px,
+	  linear-gradient(#FEC0EBFF 0 0) 
+	  0 0/calc(var(--textLength)*1ch) 200%;
+	background-size: calc(var(--textLength)*1ch) 200%;
+	background-repeat: no-repeat;
+	animation: cursor-animation 0.3s steps(1) infinite alternate, 
+	  typing-animation calc(var(--textLength)*.05s) steps(var(--textLength));
+	position: relative;
+	width: 120px;
+	z-index: 6;
+	top: 6px;
+	left: 6px;
+}
+
+.display-screen-clip {
+	color:#0000;
+	-webkit-background-clip: padding-box, text;
+	background-clip: padding-box, text;
+}
+
+@keyframes typing-animation {
+	from { background-size: 0 200% }
+}
+
+@keyframes cursor-animation {
+	50% { background-position: 0px -100%, 0px 0px }
+}
+
+.display-light-reflection {
+	width: 158px;
+	height: 134px;
+	background: url('../images/VendingMachine_2x.png') -1802px -1698px;
+	position: absolute;
+	top: 140px;
+	z-index: 10;
+  	pointer-events: none;
+}
+/* display ends */
+
+/* common styles start */
+@keyframes show-highlight {
+	from { opacity: 0%; }
+	to { opacity: 100%; }
+}
+
+@keyframes light-blink {
+	0% { opacity: 100%; }
+	49.9% { opacity: 100%; }
+	50% { opacity: 0%; }
+	100% { opacity: 0%; }
+}
+
+.highlight{
+	opacity: 0%;
+}
+
+.highlight:hover{
+	animation: show-highlight 1.0s linear 0s 1 normal forwards;
+}
+/* common styles end */

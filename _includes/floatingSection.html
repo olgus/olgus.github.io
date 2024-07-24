@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="../assets/css/floatingSectionStyle.css">
+<div class="floating-section">
+    <div class="top-left-corner"></div>
+    <div class="horizontal-straight top"></div>
+    <div class="top-right-corner"></div>
+    <div class="vertical-straight right"></div>
+    <div class="bottom-right-corner"></div>
+    <div class="horizontal-straight bottom"></div>
+    <div class="bottom-left-corner"></div>
+    <div class="vertical-straight left"></div>
+    <div class="triangle"></div>
+    <div class="floating-text">
+        <!-- <h3>Stack</h3> -->
+        {{ include.content | markdownify | newline_to_br }}
+    </div>
+</div>

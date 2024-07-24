@@ -1,0 +1,72 @@
+---
+---
+:root {
+    --header-color: #CCE9FAFF;
+    --main-background-color: #F3FAFFFF;
+    --footer-link: url("../images/birthdayBotFooter.png");
+}
+
+.header-bgc {
+	height: 198px;
+	width: 100%;
+	background-color: var(--header-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.header-bb {
+	height: 196px;
+	width: 372px;
+	background: url('../images/VendingMachine_2x.png') 0px -1246px;
+	margin-bottom: 0px;
+  	margin-top: auto;
+}
+
+.big-bubble-pop {
+	width: 46px;
+	height: 43px;
+	background: url('../images/VendingMachine_2x.png') -0px -1445px;
+	animation: steps(12) 7s infinite 2s big-bubble-pop-animation;
+	position: relative;
+	z-index: 10;
+	top: 75px;
+	left: 202px;
+}
+
+.big-bubble-grow {
+	width: 46px;
+	height: 43px;
+	background: url('../images/VendingMachine_2x.png') -554px -1445px;
+	animation: steps(10) 7s infinite 2s big-bubble-grow-animation;
+	position: relative;
+	z-index: 10;
+	top: -11px;
+	left: 204px;
+}
+
+.big-bubble-pop + .big-bubble-pop {
+	animation-delay: 5s;
+	top: 70px;
+	left: 116px;
+}
+
+.big-bubble-grow + .big-bubble-grow {
+	background: url('../images/VendingMachine_2x.png') -554px -1445px;
+	animation-delay: 5s;
+	top: -16px;
+	left: 118px;
+}
+
+@keyframes big-bubble-pop-animation{
+	0%  {background-position-x: 0px;}
+	10% {background-position-x: -551px;}
+	100% {background-position-x: -551px;}
+}
+
+@keyframes big-bubble-grow-animation{
+	0%  {background-position-x: -554px;}
+	40%  {background-position-x: -554px;}
+	50%  {background-position-x: -1014px;}
+	100% {background-position-x: -1014px;}
+}

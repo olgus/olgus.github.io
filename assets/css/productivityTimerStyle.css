@@ -1,0 +1,70 @@
+---
+---
+:root {
+    --header-color: #C09775FF;
+    --main-background-color: #F9F4EDFF;
+	--footer-link: url("../images/coffeeFooter.png");
+}
+
+.header-bgc {
+	height: 198px;
+	width: 100%;
+	background-color: var(--header-color);
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.animation-block{
+	height: 198px;
+	width: 373px;
+	position: absolute;
+	margin: auto;
+}
+
+.header-bb {
+	height: 198px;
+	width: 276px;
+	background: url('../images/VendingMachine_2x.png') 0px -1493px;
+	position: relative;
+	animation: steps(7) 2s infinite 0s stir-animation;
+	left: 47px;
+}
+
+@keyframes stir-animation{
+	0%  {background-position-x: 0px;}
+	50%  {background-position-x: 0px;}
+	100% {background-position-x: -1932px;}
+}
+
+.sugar-cube {
+	width: 105px;
+	height: 125px;
+	background: url('../images/VendingMachine_2x.png') -375px -1695px;
+	position: relative;
+	left: 90px;
+	top: 35px;
+	animation: steps(6) 2s infinite 0s sugar-cube-falling-animation,
+	linear 2s infinite 0s sugar-cube-dissapering-animation;
+}
+
+@keyframes sugar-cube-falling-animation {
+	0% {transform: scale(1.0);}
+	50% {transform: scale(0.2);}
+	100% {transform: scale(0.2);}
+}
+
+@keyframes sugar-cube-dissapering-animation {
+	0% {opacity: 100%;}
+	49.99% {opacity: 100%;}
+	50% {opacity: 0%;}
+	100% {opacity: 0%;}
+}
+
+.cup {
+	width: 373px;
+	height: 198px;
+	background: url('../images/VendingMachine_2x.png') 0px -1695px;
+	position: absolute;
+}
