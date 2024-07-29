@@ -1,10 +1,10 @@
 var currentProject = -1;
 
 function onLoad() {
-    window.addEventListener('scroll', () => { 
-        var scrollValue = window.scrollY / (document.body.offsetHeight - window.innerHeight);
-        document.body.style.setProperty('--scroll', scrollValue);
-    }, false);
+}
+
+function hideOnClick(element) {
+    element.style.setProperty('display', 'none');
 }
 
 function showProjectDescription(projectNumber) {

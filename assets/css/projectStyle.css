@@ -3,9 +3,8 @@
 :root {
     --vm-background-color: rgb(185, 216, 255);
 	--vm-bottom-color: #E5ADE6;
+	--vm-overlay-color: #2c2251;
     --vm-contrast-color: rgb(185, 0, 255);
-
-	--textLength: 119;
 }
 
 body, html{
@@ -314,20 +313,16 @@ body, html{
 	animation: insert-coin-animation calc(var(--scroll) * 1s) linear 2s infinite normal forwards;
 }
 
+.coin-cursor-hint{
+	top: 507px;
+	left: 351px;
+}
+
 @keyframes insert-coin-animation {
 	from { left: 0px; }
 	to { left: -30px; }
 }
 
-.scrollable-overlay{
-	height: 1000vh;
-	border: 1px solid red;
-	width: 100%;
-	z-index: 50;
-	position: absolute;
-	overflow: scroll;
-	pointer-events: none;
-}
 /* coin slot ends */
 
 /* productivity timer starts */
@@ -575,17 +570,73 @@ body, html{
 }
 /* display ends */
 
+/* navigation hints start */
+.hints-overlay{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	display: flex;
+}
+
+.colored-overlay{
+	background-color: var(--vm-overlay-color);
+	opacity: 50%;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 100;
+	flex: 1 1 90%;
+}
+
+.continue-label{
+	font: 31px 'VT323', monospace;
+	color: #FEC0EBFF;
+	position: absolute;
+	z-index: 110;
+	bottom: 10px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.cursor-hint{
+	width: 18px;
+	height: 18px;
+	background: url('../images/VendingMachine_2x.png') -0px -1124px;
+	position: absolute;
+	z-index: 30;
+	animation: blink 0.5s linear 0s infinite normal forwards;
+}
+
+.coin-hint{
+	position: absolute;
+	top: 389px;
+	left: 374px;
+}
+
+.project-hint{
+	position: absolute;
+	top: 280px;
+	left: 584px;
+}
+
+.links-hint{
+	position: absolute;
+	top: 38px;
+	left: 1226px;
+}
+/* navigation hints end */
+
 /* common styles start */
 @keyframes show-highlight {
 	from { opacity: 0%; }
 	to { opacity: 100%; }
 }
 
-@keyframes light-blink {
-	0% { opacity: 100%; }
-	49.9% { opacity: 100%; }
-	50% { opacity: 0%; }
-	100% { opacity: 0%; }
+@keyframes blink {
+	0% { opacity: 0%; }
+	19.9% { opacity: 0%; }
+	20% { opacity: 100%; }
+	100% { opacity: 100%; }
 }
 
 .highlight{
@@ -594,5 +645,9 @@ body, html{
 
 .highlight:hover{
 	animation: show-highlight 1.0s linear 0s 1 normal forwards;
+}
+
+.float-on-top{
+	z-index: 200;
 }
 /* common styles end */

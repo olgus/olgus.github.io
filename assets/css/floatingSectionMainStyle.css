@@ -1,0 +1,165 @@
+---
+---
+
+:root {
+    --fs-background-color: #CAB4DB;
+    --fs-text-color: #3c1d3c;
+}
+
+.floating-section {
+	position: relative;
+	max-width: 300px;
+	max-height: 500px;
+	min-width: 100px;
+    min-height: 65px;
+	/* animation: bopping-animation 0.5s ease-in-out 0s infinite alternate both; */
+}
+
+.text-fs {
+	position: relative;
+	padding-left: 10px;
+	box-sizing: border-box;
+	text-align: center;
+	font: 18px 'VT323', monospace;
+	z-index: 202;
+    padding: 10px;
+    color: var(--fs-text-color);
+}
+
+.top-left-corner{
+    background: url("../images/Floating_section_main/top-left-corner.png");
+    height: 10px;
+    width: 10px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    align-items: stretch;
+}
+
+.top-right-corner{
+    background: url("../images/Floating_section_main/top-right-corner.png");
+    height: 10px;
+    width: 10px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.bottom-right-corner{
+    background: url("../images/Floating_section_main/bottom-right-corner.png");
+    height: 10px;
+    width: 10px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+.bottom-left-corner{
+    background: url("../images/Floating_section_main/bottom-left-corner.png");
+    height: 10px;
+    width: 10px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+.top-horizontal{
+    background: url("../images/Floating_section_main/top-horizontal.png");
+    height: 10px;
+    width: calc(100% - 20px);
+    position: absolute;
+    background-repeat: repeat-x;
+}
+
+.bottom-horizontal{
+    background: url("../images/Floating_section_main/bottom-horizontal.png");
+    height: 10px;
+    width: calc(100% - 20px);
+    background-repeat: repeat-x;
+}
+
+.vertical-right{
+    background: url("../images/Floating_section_main/vertical-right.png");
+    height: calc(100% - 20px);
+    width: 10px;
+    position: absolute;
+    background-repeat: repeat-y;
+}
+
+.vertical-left{
+    background: url("../images/Floating_section_main/vertical-left.png");
+    height: calc(100% - 20px);
+    width: 10px;
+    position: absolute;
+    background-repeat: repeat-y;
+}
+
+.triangle-bottom-to-the-left {
+	background: url("../images/Floating_section_main/triangle-bottom-to-the-left.png");
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	top: auto;
+    left: 10px;
+    bottom: -8px;
+}
+
+.triangle-bottom-to-the-right {
+	background: url("../images/Floating_section_main/triangle-bottom-to-the-right.png");
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	top: auto;
+    right: 10px;
+    bottom: -8px;
+}
+
+.triangle-top-to-the-left {
+	background: url("../images/Floating_section_main/triangle-top-to-the-left.png");
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	top: -8px;
+    left: 10px;
+}
+
+.top{
+    position: absolute;
+    left: 10px;
+    top: 0px;
+}
+
+.bottom{
+    position: absolute;
+    left: 10px;
+    bottom: 0px;
+}
+
+.left{
+    position: absolute;
+    left: 0px;
+    top: 10px;
+}
+
+.right{
+    position: absolute;
+    right: 0px;
+    top: 10px;
+}
+
+.fs-bg{
+    top: 10px;
+    left: 10px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: calc(100% - 20px);
+    height: calc(100% - 12px);
+    background-color: var(--fs-background-color);
+}
+
+@keyframes bopping-animation {
+    from { top: 0px; };
+    to { top: -10px; };
+}
