@@ -44,11 +44,15 @@ body, html{
 /* grid ends */
 
 .projectTitle{
-  font: 40px 'VT323', monospace;
+  font: 45px 'VT323', monospace;
+  top: 36px;
+  position: absolute;
 }
 
 .projectMotto{
-  font: 24px 'VT323', monospace;
+  font: 22px 'VT323', monospace;
+  position: absolute;
+  top: 86px;
 }
 
 h3{

@@ -12,112 +12,208 @@ layout: none
 </head>
 
 <body onload="onLoad()">
-    <div class="hints-overlay" onclick="hideOnClick(this)">
-        <div class="float-on-top coin-hint">
-            {%include Floating_sections/floatingSectionMain.html 
-            content="Click the coin to insert and access details about a chosen project" 
-            %}</div>
-        <div class="float-on-top project-hint">
-            {%include Floating_sections/floatingSectionMain.html 
-            content="Select the project to learn more" 
-            bottom_fs = true
-            %}</div>
-        <div class="float-on-top links-hint">
-            {%include Floating_sections/floatingSectionMain.html 
-            content="Check out my links!" 
+    <div id="hints" class="hints-overlay" onclick="updateHintsOnClick()">
+        <div class="container-h">
+            <div class="top-free-space"></div>
+            <div class="container-v">
+                <div class="shadow-cover"></div>
+                <div class="left-free-space"></div>
+                <div class="bg">
+                    <div class="stock-hints">
+                        <div id="coin-hint-id" class="float-on-top coin-hint">
+                            {%include Floating_sections/floatingSectionMain.html
+                            content="Insert the coin"
+                            %}</div>
+                        <div id="project-hint-id" class="float-on-top project-hint">
+                            {%include Floating_sections/floatingSectionMain.html
+                            content="Select the product"
+                            bottom_fs = true
+                            %}</div>
+                        <div id="project-hint-id-highlight" class="float-on-top productivity-timer">
+                            <div class="productivity-timer-highlight"></div>
+                            <div class="productivity-timer-icon"></div>
+                        </div>
+                        <div id="help-hint-id-highlight" class="float-on-top help-sticker hint-hidden">
+                            <div class="help-icon"></div>
+                            <div class="help-highlight"></div>
+                        </div>
+                        <div id="coin-hint-id-highlight" class="float-on-top coin-slot hint-hidden">
+                            <div class="coin-icon"></div>
+                            <div class="coin-highlight-icon"></div>
+                        </div>
+                        <div id="handle-hint-id-highlight" class="float-on-top handle hint-hidden">
+                            <div class="handle-icon"></div>
+                            <div class="handle-highlight"></div>
+                        </div>
+                        <div id="handle-hint-id" class="float-on-top handle-hint">
+                            {%include Floating_sections/floatingSectionMain.html
+                            content="Open project page"
+                            bottom_fs = true
+                            %}</div>
+                        <div id="help-hint-id" class="float-on-top help-hint">
+                            {%include Floating_sections/floatingSectionMain.html
+                            content="Click here to see the hints again"
+                            left_fs = true
+                            on_the_right = true
+                            %}</div>
+                    </div>
+                </div>
+                <div class="shadow-cover"></div>
+            </div>
+            <div class="bottom-free-space"></div>
+        </div>
+        <div id="links-hint-id" class="float-on-top links-hint">
+            {%include Floating_sections/floatingSectionMain.html
+            content="Check out my links!"
             left_fs = true
             %}</div>
-        <div class="continue-label">Click anywhere to continue</div>
+        <div class="float-on-top light-pole-block">
+            <div id="links-hint-id-highlight" class="light-pole-hint hint-hidden">
+                <div class="github-highlight"></div>
+                <div class="github-icon"></div>
+            </div>
+        </div>
+        <div id="continue-label-id" class="continue-label">Click anywhere to see the next hint</div>
         <div class="colored-overlay"></div>
     </div>
     <div class="sakura-branches">
-        <div class="top-sakura-branch-shadow"></div>
-        <div class="top-sakura-branch"></div>
-        <div class="bottom-sakura-branch-shadow"></div>
-        <div class="bottom-sakura-branch"></div>
+        <div id="top-sakura-branch-shadow-id"
+            class="top-sakura-branch-shadow sakura-branches-animation sakura-branches-animation-in"></div>
+        <div id="top-sakura-branch-id" class="top-sakura-branch sakura-branches-animation sakura-branches-animation-in">
+        </div>
+        <div id="bottom-sakura-branch-shadow-id"
+            class="bottom-sakura-branch-shadow sakura-branches-animation sakura-branches-animation-in"></div>
+        <div id="bottom-sakura-branch-id"
+            class="bottom-sakura-branch sakura-branches-animation sakura-branches-animation-in"></div>
+        <div id="sakura-petal-0-id"
+            class="sakura-petal sakura-petal-0 sakura-petal-swirl-animation sakura-petal-fall-animation "></div>
+        <div id="sakura-petal-1-id" class="sakura-petal sakura-petal-1"></div>
+        <div id="sakura-petal-2-id" class="sakura-petal sakura-petal-2"></div>
     </div>
     <div class="container-h">
-        <div class="top-free-space">
+        <div class="top-free-space main-background cover">
             <div class="container-v container-v-top">
-                <div class="left-free-space"></div>
-                <div class="shadow-cover"></div>
-                <div class="cat-top"></div>
-                <div class="shadow-cover"></div>
+                <div class="left-free-space main-background"></div>
+                <div class="shadow-cover main-background"></div>
+                <div class="cat-free-space cat-top"></div>
+                <div class="shadow-cover main-background"></div>
             </div>
         </div>
         <div class="container-v">
-            <div class="shadow-cover"></div>
-            <div class="left-free-space"></div>
-            <div class="bg">
+            <div class="shadow-cover main-background cover"></div>
+            <div class="left-free-space main-background cover"></div>
+            <div class="bg main-background">
                 <div class="stock">
                     <div class="product-display-light-reflection"></div>
-                    <div class="cat-tail tail-reflection"></div>
-                    <div class="cat-tail"></div>
+                    <div id="cat-tail-reflection-id" class="cat-tail tail-reflection"></div>
+                    <div id="cat-tail-id" class="cat-tail cursor-pointer" onclick="moveCatTail()"></div>
                     <div class="display">
                         <div class="display-light-reflection"></div>
                         <div class="display-text-field">
                             <span id="text-on-screen" class="typewriter-effect display-screen-clip">
                         </div>
                     </div>
-                    <div class="coin-cursor-hint cursor-hint"></div>
-                    <div class="coin-slot">
-                        <div class="coin"></div>
+                    <div class="help-sticker cursor-pointer" onmousedown="showHints()">
+                        <div class="help-icon"></div>
+                        <div class="help-highlight highlight"></div>
                     </div>
-                    <div class="productivity-timer">
+                    <div class="coin-slot cursor-pointer" onmousedown="insertCoin()">
+                        <div id="coin" class="coin-icon"></div>
+                        <div id="coin-highlight" class="coin-highlight-icon highlight"></div>
+                    </div>
+                    <div class="handle cursor-pointer" onclick="openProjectPage()">
+                        <div class="handle-icon"></div>
+                        <div class="handle-highlight highlight"></div>
+                    </div>
+                    <div class="new-sticker"></div>
+                    <div class="productivity-timer cursor-pointer">
                         <div class="productivity-timer-highlight highlight" onclick="showProjectDescription(0)">
                         </div>
                     </div>
-                    <div class="light-item-in-stock productivity-timer-light-icon top-shelf"></div>
-                    <div class="pen-guin-bot">
+                    <div class="light-item top-shelf top-shelf-1">
+                        <div class="in-stock"></div>
+                        <div class="light-in-stock"></div>
+                    </div>
+                    <div class="pen-guin-bot cursor-pointer">
                         <div class="pen-guin-bot-highlight highlight" onclick="showProjectDescription(1)">
                         </div>
                     </div>
-                    <div class="light-item-in-stock pen-guin-bot-light-icon top-shelf"></div>
-                    <div class="shopping-app-placeholder">
-                        <div class="shopping-app-placeholder-highlight highlight" onclick="showProjectDescription(4)">
-                        </div>
+                    <div class="light-item top-shelf top-shelf-2">
+                        <div class="in-stock"></div>
+                        <div class="light-in-stock"></div>
                     </div>
-                    <div class="light-item-out-of-stock top-shelf light-item-out-of-stock-top-shelf-1"></div>
-                    <div class="light-item-out-of-stock top-shelf light-item-out-of-stock-top-shelf-2"></div>
-                    <div class="light-item-out-of-stock top-shelf light-item-out-of-stock-top-shelf-3"></div>
-                    <div class="light-item-out-of-stock top-shelf light-item-out-of-stock-top-shelf-4"></div>
-                    <div class="light-item-out-of-stock top-shelf light-item-out-of-stock-top-shelf-5"></div>
-
-                    <div class="light-item-out-of-stock light-item-bottom-shelf light-item-out-of-stock-bottom-shelf-1">
+                    <div class="coming-soon-sticker"></div>
+                    <div class="shopping-app-placeholder"></div>
+                    <div class="light-item top-shelf top-shelf-3">
+                        <div class="out-of-stock"></div>
+                        <div class="light-out-of-stock"></div>
                     </div>
-                    <div class="light-item-out-of-stock light-item-bottom-shelf light-item-out-of-stock-bottom-shelf-2">
+                    <div class="light-item top-shelf top-shelf-4">
+                        <div class="out-of-stock"></div>
+                        <div class="light-out-of-stock"></div>
                     </div>
-                    <div class="light-item-out-of-stock light-item-bottom-shelf light-item-out-of-stock-bottom-shelf-3">
+                    <div class="light-item top-shelf top-shelf-5">
+                        <div class="out-of-stock"></div>
+                        <div class="light-out-of-stock"></div>
                     </div>
-                    <div class="light-item-out-of-stock light-item-bottom-shelf light-item-out-of-stock-bottom-shelf-4">
+                    <div class="light-item top-shelf top-shelf-6">
+                        <div class="out-of-stock"></div>
+                        <div class="light-out-of-stock"></div>
                     </div>
-                    <div class="light-item-out-of-stock light-item-bottom-shelf light-item-out-of-stock-bottom-shelf-5">
+                    <div class="light-item top-shelf top-shelf-7">
+                        <div class="out-of-stock"></div>
+                        <div class="light-out-of-stock"></div>
                     </div>
-                    <div class="light-item-out-of-stock light-item-bottom-shelf light-item-out-of-stock-bottom-shelf-6">
+                    <div class="light-item bottom-shelf bottom-shelf-1">
+                        <div class="out-of-stock"></div>
+                        <div class="light-out-of-stock"></div>
                     </div>
-                    <div class="light-item-out-of-stock light-item-bottom-shelf light-item-out-of-stock-bottom-shelf-7">
+                    <div class="light-item bottom-shelf bottom-shelf-2">
+                        <div class="out-of-stock"></div>
+                        <div class="light-out-of-stock"></div>
+                    </div>
+                    <div class="light-item bottom-shelf bottom-shelf-3">
+                        <div class="out-of-stock"></div>
+                        <div class="light-out-of-stock"></div>
+                    </div>
+                    <div class="light-item bottom-shelf bottom-shelf-4">
+                        <div class="out-of-stock"></div>
+                        <div class="light-out-of-stock"></div>
+                    </div>
+                    <div class="light-item bottom-shelf bottom-shelf-5 light-blink">
+                        <div class="out-of-stock"></div>
+                        <div class="light-out-of-stock"></div>
+                    </div>
+                    <div class="light-item bottom-shelf bottom-shelf-6">
+                        <div class="out-of-stock"></div>
+                        <div class="light-out-of-stock"></div>
+                    </div>
+                    <div class="light-item bottom-shelf bottom-shelf-7">
+                        <div class="out-of-stock"></div>
+                        <div class="light-out-of-stock"></div>
                     </div>
                 </div>
+                <div class="shadow-cover main-background cover"></div>
             </div>
             <div class="shadow-cover"></div>
         </div>
-        <div class="bottom-free-space">
+        <div class="bottom-free-space main-background">
             <div class="container-v container-v-bottom">
-                <div class="shadow-cover"></div>
-                <div class="left-free-space"></div>
+                <div class="shadow-cover main-background cover"></div>
+                <div class="left-free-space main-background cover"></div>
                 <div class="vm-bottom"></div>
-                <div class="shadow-cover"></div>
+                <div class="shadow-cover main-background"></div>
             </div>
         </div>
     </div>
     <div class="light-pole-block">
-        <div class="light-pole">
-            <div class="email-highlight highlight"></div>
-            <div class="github-highlight highlight"></div>
-            <div class="linkedin-highlight highlight"></div>
-            <div class="cv-pdf-highlight highlight"></div>
+        <div id="light-pole-id" class="light-pole light-pole-bg light-pole-animation-in light-pole-animation">
+            <div class="email-highlight highlight cursor-pointer"></div>
+            <div class="github-highlight highlight cursor-pointer"></div>
+            <div class="linkedin-highlight highlight cursor-pointer"></div>
+            <div class="cv-pdf-highlight highlight cursor-pointer"></div>
         </div>
-        <div class="light-pole-bottom"></div>
+        <div id="light-pole-bottom-id" class="light-pole light-pole-bottom light-pole-animation-in light-pole-animation"></div>
     </div>
 </body>
 

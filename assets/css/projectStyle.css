@@ -41,13 +41,20 @@ body, html{
 .container-v-bottom{
 	height: 100%;
 }
+
+.main-background {
+	background-color: var(--vm-background-color);
+}
+
+.cover {
+	z-index: 5;
+}
+
 /* flex section start */
 .top-free-space{
 	width: 100%;
 	flex: 1 1 0px;
 	
-	background-color: var(--vm-background-color);
-	z-index: 5;
 	overflow: hidden;
 	align-content: flex-end;
 }
@@ -55,24 +62,21 @@ body, html{
 .bottom-free-space{
 	width: 100%;
 	flex: 1 1 0px;
-	
-	background-color: var(--vm-background-color);
-	z-index: 5;
 }
 
 .left-free-space{
 	width: 31px;
 	height: 100%;
+}
 
-	background-color: var(--vm-background-color);
-	z-index: 5;
+.cat-free-space{
+	width: 1510px;
+	height: 122px;
+	position: absolute;
 }
 
 .cat-top {
-	width: 1510px;
-	height: 122px;
 	background: url('../images/VendingMachine_2x.png') -529px 0px; 
-	position: absolute;
 }
 
 .vm-bottom{
@@ -112,7 +116,6 @@ body, html{
 /* grid ends */
 
 .bg{
-  background-color: var(--vm-background-color);
   height: 703px;
   width: 1541px;
   position: relative;
@@ -123,9 +126,7 @@ body, html{
 .stock {
 	width: 1510px;
 	height: 900px;
-	/* background: url('../images/VendingMachine_2x.png') -529px 0px; */
-	background: url('../images/VendingMachine_2x.png') -529px -123px; /* -31 +123 */
-	/* animation: walk-in-animation-stock 2s ease-out 0s 1 normal forwards; */
+	background: url('../images/VendingMachine_2x.png') -529px -123px;
 	transform-origin: 50% 0%;
   	position: relative;
 }
@@ -144,7 +145,7 @@ body, html{
 	position: relative;
 	top: -229px;
 	left: -100px;
-  	animation: sakura-branch-animation 2s ease-out 0s 1 normal forwards;
+  	animation-name: sakura-branch-animation-2;
 	transform-origin: 0% 50%;
 	z-index: 10;
 }
@@ -156,10 +157,10 @@ body, html{
 	position: relative;
 	top: 47px;
 	left: 26px;
-	animation: sakura-branch-animation 2s ease-out 0s 1 normal forwards, 
-	top-sakura-branch-shadow-animation 2s ease-out 0s 1 normal forwards;
+	animation-name: sakura-branch-animation-2, 
+	top-sakura-branch-shadow-animation;
 	transform-origin: 0% 50%;
-	z-index: 2;
+	z-index: 4;
 }
 
 .bottom-sakura-branch {
@@ -167,9 +168,9 @@ body, html{
 	height: 256px;
 	background: url('../images/VendingMachine_2x.png') -928px -1185px;
 	position: relative;
-	top: -287px;
+	top: -206px;
 	left: -90px;
-	animation: sakura-branch-animation 2s ease-out 0s 1 normal forwards;
+	animation-name: sakura-branch-animation-2;
 	transform-origin: 0% 50%;
 	z-index: 10;
 }
@@ -179,11 +180,11 @@ body, html{
 	height: 232px;
 	background: url('../images/VendingMachine_2x.png') -492px -1695px;
 	position: relative;
-	top: 21px;
+	top: 102px;
 	left: 0px;
-	animation: sakura-branch-animation 2s ease-out 0s 1 normal forwards, bottom-sakura-branch-shadow-animation 2s ease-out 0s 1 normal forwards;
+	animation-name: sakura-branch-animation-2, bottom-sakura-branch-shadow-animation;
 	transform-origin: 0% 50%;
-	z-index: 2;
+	z-index: 4;
 }
 
 .sakura-branches{
@@ -194,9 +195,31 @@ body, html{
 	width: 100%;
 }
 
+.sakura-branches-animation {
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+	animation-delay: 0s;
+}
+
+.sakura-branches-animation-in {
+	animation-direction: normal;
+	animation-duration: 2s;
+}
+
+.sakura-branches-animation-out {
+	animation-direction: reverse;
+	animation-duration: 1.5s;
+}
+
 @keyframes sakura-branch-animation {
   from { transform: scale(1.4, 1.4); }
   to { transform: scale(1, 1); }
+}
+
+@keyframes sakura-branch-animation-2 {
+	from { transform: scale(0.7, 0.7); }
+	to { transform: scale(1, 1); }
 }
 
 @keyframes top-sakura-branch-shadow-animation{
@@ -210,13 +233,47 @@ body, html{
 }
 
 .shadow-cover{
-	background-color: var(--vm-background-color);
 	width: 100px;
 	height: 100%;
 	flex: 1 1 0px;
-	z-index: 5;
 }
 /* sakura branches end */
+
+/* sakura-petal starts */
+.sakura-petal {
+	background: url('../images/VendingMachine_2x.png') -299px -339px;
+	width: 80px;
+	height: 21px;
+	position: absolute;
+	z-index: 10;
+	animation: sakura-petal-animation 2s steps(17) 0s infinite normal forwards, sakura-petal-fall-animation 5s linear 0s infinite normal forwards;
+	opacity: 0%;
+}
+
+.sakura-petal-0 {
+	top: 80px;
+	left: 236px;
+}
+
+.sakura-petal-1 {
+	top: 150px;
+	left: 21px;
+}
+
+.sakura-petal-2 {
+	top: 70px;
+	left: 296px;
+}
+
+@keyframes sakura-petal-animation {
+	from { background-position-y: -339px; }
+	to { background-position-y: -712px; }
+}
+
+@keyframes sakura-petal-fall-animation {
+	to { top: 100%; }
+}
+/* sakura-petal ends */
 
 /* product display starts */
 .product-display-light-reflection {
@@ -236,12 +293,14 @@ body, html{
 	height: 153px;
 	width: 171px;
 	background: url('../images/Cat_tail.png') 0px 0px;
-	animation: steps(11) 1.5s infinite 2s cat-tail-animation;
-	/* walk-in-animation-stock 2s ease-out 0s 1 normal forwards; */
 	position: absolute;
 	top: 28px;
 	left: 1175px;
 	transform-origin: 50% 0%;
+}
+
+.cat-tail-move {
+	animation: steps(11) 1.5s 1 0s cat-tail-animation;
 }
 
 @keyframes cat-tail-animation{
@@ -263,67 +322,140 @@ body, html{
 	z-index: 20;
 	position: absolute;
 	left: auto;
-	right: 10px;
+	right: 0px;
 	top: 0px;
 	height: 100%;
 	overflow: hidden;
 	box-sizing: border-box;
 	padding-left: 12px;
 	padding-right: 11px;
+	width: auto;
 }
 
 .light-pole {
-	width: 147px;
+	width: 148px;
 	height: 957px;
-	background: url('../images/VendingMachine_2x.png') -0px -83px;
-	animation: walk-in-animation-pole 2s ease-out 0s 1 normal forwards;
-	transform-origin: 50% 50%;
+	animation-name: walk-in-animation-pole;
+	transform-origin: 0% 0%;
+	position: relative;
+	left: 0px;
+	top: 0px;
+}
+
+.light-pole-hint{
+	width: 148px;
+	height: 943px;
+	transform-origin: 0% 0%;
+	transform: scale(1.1, 1.1); 
+	position: relative;
+	left: -10px;
+	top: 0px;
+}
+
+.light-pole-bg {
+	background: url('../images/VendingMachine_2x.png') -0px -136px;
 }
 
 .light-pole-bottom {
 	background: url('../images/light-pole-bottom.png');
 	background-repeat: repeat-y;
-	animation: walk-in-animation-pole 2s ease-out 0s 1 normal forwards;
-	transform-origin: 50% 50%;
+	animation-name: walk-in-animation-pole;
+	transform-origin: 0% 0%;
 	height: 100%;
-	margin-left: 9px;
+	margin-left: 10px;
+	width: 148px;
+}
+
+.light-pole-animation {
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+	animation-delay: 0s;
+}
+
+.light-pole-animation-in {
+	animation-direction: normal;
+	animation-duration: 2s;
+}
+
+.light-pole-animation-out {
+	animation-direction: reverse;
+	animation-duration: 1.5s;
 }
 
 @keyframes walk-in-animation-pole {
-	from { transform: scale(1.2, 1.2); left: 1420px; }
-	to { transform: scale(1, 1); left: 1387px; }
-  }
+	from { transform: scale(1.0, 1.0); left: 50px; }
+	to { transform: scale(1.1, 1.1); left: 0px; }
+}
 /* light pole ends */
 
 /* coin slot starts */
 .coin-slot {
-	left: 338px;
-	top: 494px;
+	left: 337px;
+	top: 483px;
 	position: absolute;
-	width: 23px;
-	height: 48px;
+	width: 37px;
+	height: 71px;
 	overflow: hidden;
 }
 
-.coin {
+.coin-highlight-icon {
+	width: 47px;
+	height: 71px;
+	background: url('../images/VendingMachine_2x.png') -264px -0px;
+	position: absolute;
+	left: -10px;
+}
+
+.coin-icon {
 	width: 23px;
 	height: 47px;
 	background: url('../images/VendingMachine_2x.png') -0px -1896px;
 	position: absolute;
-	animation: insert-coin-animation calc(var(--scroll) * 1s) linear 2s infinite normal forwards;
+	top: 12px;
+	left: 2px;
 }
 
-.coin-cursor-hint{
-	top: 507px;
-	left: 351px;
+.coin-animation {
+	animation: insert-coin-animation 1s linear 0s 1 normal forwards;
+}
+
+.coin-cursor-hint {
+	top: 506px;
+	left: 336px;
 }
 
 @keyframes insert-coin-animation {
-	from { left: 0px; }
-	to { left: -30px; }
+	from { left: 2px; }
+	to { left: -27px; }
+}
+/* coin slot ends */
+
+/* handle starts */
+.handle {
+	width: 83px;
+	height: 41px;
+	position: absolute;
+	left: 345px;
+	top: 556px;
 }
 
-/* coin slot ends */
+.handle-highlight {
+	width: 109px;
+	height: 65px;
+	background: url('../images/VendingMachine_2x.png') -144px -662px;
+	position: relative;
+	top: -54px;
+	left: -12px;
+}
+
+.handle-icon {
+	width: 83px;
+	height: 41px;
+	background: url('../images/VendingMachine_2x.png') -0px -1945px;
+	position: relative;
+}
+/* handle ends */
 
 /* productivity timer starts */
 .productivity-timer {
@@ -332,6 +464,15 @@ body, html{
 	position: absolute;
 	top: 102px;
 	left: 504px;
+}
+
+.productivity-timer-icon {
+	background: url('../images/VendingMachine_2x.png') -312px 0px;
+	width: 72px;
+	height: 159px;
+	position: absolute;
+	top: 11px;
+	left: 11px;
 }
 
 .productivity-timer-highlight {
@@ -373,118 +514,190 @@ body, html{
 }
 /* shopping app placeholder ends */
 
+/* item light starts */
+.light-item {
+	width: 102px;
+	height: 48px;
+	position: absolute;
+}
+/* item light starts */
+
 /* item in stock light starts */
-.light-item-in-stock {
+.light-in-stock {
 	width: 102px;
 	height: 46px;
 	background: url('../images/VendingMachine_2x.png') -1693px -1697px;
+	top: -26px;
+	left: 0px;
+	position: relative;
 }
 
-.productivity-timer-light-icon {
-	left: 498px;
-	position: absolute;
-}
-
-.pen-guin-bot-light-icon {
-	left: 632px;
-	position: absolute;
+.in-stock {
+	width: 63px;
+	height: 26px;
+	background: url('../images/VendingMachine_2x.png') -385px -68px;
+	position: relative;
+	top: 10px;
+	left: 21px;
 }
 /* item in stock light ends */
 
 /* item out of stock light starts */
-.light-item-out-of-stock {
+.out-of-stock {
+	width: 63px;
+	height: 26px;
+	background: url('../images/VendingMachine_2x.png') -385px -94px;
+	position: relative;
+	top: 10px;
+	left: 21px;
+}
+
+.light-out-of-stock {
 	width: 102px;
 	height: 48px;
 	background: url('../images/VendingMachine_2x.png') -1693px -1747px;
-	position: absolute;
+	position: relative;
+	top: -26px;
+	left: 0px;
 }
 
 .top-shelf{
-	top: 260px;
+	top: 261px;
 }
 
-.light-item-out-of-stock-top-shelf-1 {
-	left: 767px;
+.top-shelf-1 {
+	left: 498px;
 }
 
-.light-item-out-of-stock-top-shelf-2 {
-	left: 901px;
-}
-
-.light-item-out-of-stock-top-shelf-3 {
-	left: 1033px;
-}
-
-.light-item-out-of-stock-top-shelf-4 {
-	left: 1162px;
-}
-
-.light-item-out-of-stock-top-shelf-5 {
-	left: 1287px;
-}
-
-.light-item-bottom-shelf {
-	top: 486px;
-}
-
-.light-item-out-of-stock-bottom-shelf-1 {
-	left: 499px;
-}
-
-.light-item-out-of-stock-bottom-shelf-2 {
+.top-shelf-2 {
 	left: 632px;
 }
 
-.light-item-out-of-stock-bottom-shelf-3 {
+.top-shelf-3 {
+	left: 766px;
+}
+
+.top-shelf-4 {
+	left: 901px;
+}
+
+.top-shelf-5 {
+	left: 1033px;
+}
+
+.top-shelf-6 {
+	left: 1162px;
+}
+
+.top-shelf-7 {
+	left: 1287px;
+}
+
+.bottom-shelf {
+	top: 487px;
+}
+
+.bottom-shelf-1 {
+	left: 499px;
+}
+
+.bottom-shelf-2 {
+	left: 632px;
+}
+
+.bottom-shelf-3 {
 	left: 767px;
 }
 
-.light-item-out-of-stock-bottom-shelf-4 {
+.bottom-shelf-4 {
 	left: 900px;
 }
 
-.light-item-out-of-stock-bottom-shelf-5 {
+.bottom-shelf-5 {
 	left: 1035px;
 }
 
-.light-item-out-of-stock-bottom-shelf-6 {
+.bottom-shelf-6 {
 	left: 1164px;
 }
 
-.light-item-out-of-stock-bottom-shelf-7 {
+.bottom-shelf-7 {
 	left: 1287px;
 }
 
 .light-blink{
-	animation: light-blink-animation 5s linear 0s infinite normal forwards;
+	animation: light-blink-animation 20s linear 0s infinite normal forwards;
 }
 
 @keyframes light-blink-animation {
 	0% { opacity: 100%; }
-	20% { opacity: 100%; }
-	21% { opacity: 0%; }
+	9.7% { opacity: 100%; }
+	10% { opacity: 0%; }
+	10.3% { opacity: 100%; }
+	28.7% { opacity: 100%; }
 	29% { opacity: 0%; }
-	30% { opacity: 100%; }
+	29.3% { opacity: 100%; }
+	68.7% { opacity: 100%; }
+	69% { opacity: 0%; }
+	69.3% { opacity: 100%; }
+	71.8% { opacity: 100%; }
+	72% { opacity: 0%; }
+	72.3% { opacity: 100%; }
 	100% { opacity: 100%; }
 }
 /* item out of stock light ends */
 
+/* stock stickers start */
+.new-sticker {
+	width: 101px;
+	height: 67px;
+	background: url('../images/VendingMachine_2x.png') -385px -0px;
+	position: absolute;
+	top: 81px;
+	left: 540px;
+	pointer-events: none;
+	transform: rotate(21deg);
+	z-index: 30;
+}
+
+.coming-soon-sticker {
+	width: 105px;
+	height: 49px;
+	background: url('../images/VendingMachine_2x.png') -149px -1040px;
+	position: absolute;
+	top: 97px;
+	left: 759px;
+	pointer-events: none;
+	transform: rotate(-13deg);
+	z-index: 30;
+}
+/* stock stickers end */
+
 /* links start */
 .email-highlight {
-	width: 215px;
+	width: 115px;
 	height: 147px;
-	background: url('../images/VendingMachine_2x.png') -148px -0px;
-	position: relative;
+	background: url('../images/VendingMachine_2x.png') -149px -0px;
+	position: absolute;
 	top: 83px;
 	left: -12px;
+}
+
+.github-icon {
+	width: 122px;
+	height: 175px;
+	background: url('../images/VendingMachine_2x.png') -295px -161px;
+	position: relative;
+	top: 222px;
+	left: 21px;
 }
 
 .github-highlight {
 	width: 145px;
 	height: 197px;
 	background: url('../images/VendingMachine_2x.png') -148px -148px;
-	position: relative;
-	top: 62px;
+	position: absolute;
+	top: 209px;
 	left: 8px;
 }
 
@@ -492,8 +705,8 @@ body, html{
 	width: 59px;
 	height: 127px;
 	background: url('../images/VendingMachine_2x.png') -148px -350px;
-	position: relative;
-	top: 67px;
+	position: absolute;
+	top: 411px;
 	left: -2px;
 }
 
@@ -501,8 +714,8 @@ body, html{
 	width: 143px;
 	height: 183px;
 	background: url('../images/VendingMachine_2x.png') -148px -478px;
-	position: relative;
-	top: 62px;
+	position: absolute;
+	top: 533px;
 	left: 0px;
 }
 /* links end */
@@ -525,11 +738,15 @@ body, html{
 	padding: 12px;
 	padding-right: 20px;
 	text-align: justify;
+
+	-webkit-user-select: none; /* Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
 }
 
 .typewriter-effect{
-	font: 24px 'VT323', monospace; /*TODO for the whole document?*/
-	/* font-weight: 600; */
+	font: 24px 'VT323', monospace;
 	background: linear-gradient(-90deg, #FEC0EBFF 10px, #0000 0) 
 	  15px 21px/calc(var(--textLength)*1ch) 3px,
 	  linear-gradient(#FEC0EBFF 0 0) 
@@ -570,15 +787,44 @@ body, html{
 }
 /* display ends */
 
+/* help starts */
+.help-sticker {
+	width: 232px;
+	height: 168px;
+	position: absolute;
+	top: 463px;
+	left: 51px;
+}
+
+.help-icon {
+	width: 208px;
+	height: 144px;
+	background: url('../images/VendingMachine_2x.png') -148px -728px;
+	position: relative;
+	top: 10px;
+	left: 12px;
+}
+
+.help-highlight {
+	width: 232px;
+	height: 167px;
+	background: url('../images/VendingMachine_2x.png') -148px -873px;
+	position: relative;
+	top: -145px;
+  	left: 0px;
+}
+/* help ends */
+
 /* navigation hints start */
-.hints-overlay{
+.hints-overlay {
 	width: 100%;
 	height: 100%;
 	position: absolute;
-	display: flex;
+	display: none;
+	z-index: 199;
 }
 
-.colored-overlay{
+.colored-overlay {
 	background-color: var(--vm-overlay-color);
 	opacity: 50%;
 	width: 100%;
@@ -588,7 +834,7 @@ body, html{
 	flex: 1 1 90%;
 }
 
-.continue-label{
+.continue-label {
 	font: 31px 'VT323', monospace;
 	color: #FEC0EBFF;
 	position: absolute;
@@ -598,31 +844,59 @@ body, html{
 	transform: translate(-50%, -50%);
 }
 
-.cursor-hint{
-	width: 18px;
-	height: 18px;
-	background: url('../images/VendingMachine_2x.png') -0px -1124px;
+.cursor-hint {
+	width: 26px;
+  	height: 26px;
+  	background: url('../images/VendingMachine_2x.png') -43px -1082px;
+
 	position: absolute;
 	z-index: 30;
 	animation: blink 0.5s linear 0s infinite normal forwards;
 }
 
-.coin-hint{
+.coin-hint {
 	position: absolute;
-	top: 389px;
-	left: 374px;
+	top: 409px;
+	left: 350px;
+	opacity: 0%;
 }
 
-.project-hint{
+.project-hint {
 	position: absolute;
-	top: 280px;
-	left: 584px;
+	top: 284px;
+	left: 571px;
 }
 
-.links-hint{
+.links-hint {
 	position: absolute;
-	top: 38px;
-	left: 1226px;
+	top: 147px;
+	right: 138px;
+	opacity: 0%;
+}
+
+.handle-hint {
+	position: absolute;
+	top: 572px;
+	left: 420px;
+	opacity: 0%;
+}
+
+.stock-hints {
+	width: 1510px;
+	height: 900px;
+	transform-origin: 50% 0%;
+  	position: relative;
+}
+
+.help-hint{
+	position: absolute;
+	top: 384px;
+	left: 14px;
+	opacity: 0%;
+}
+
+.hint-hidden{
+	opacity: 0%;
 }
 /* navigation hints end */
 
@@ -639,15 +913,19 @@ body, html{
 	100% { opacity: 100%; }
 }
 
-.highlight{
+.highlight {
 	opacity: 0%;
 }
 
-.highlight:hover{
-	animation: show-highlight 1.0s linear 0s 1 normal forwards;
+.highlight:hover {
+	animation: show-highlight 0.7s linear 0s 1 normal forwards;
 }
 
-.float-on-top{
+.float-on-top {
 	z-index: 200;
+}
+
+.cursor-pointer {
+	cursor: pointer;
 }
 /* common styles end */

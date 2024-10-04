@@ -12,11 +12,15 @@
     <div class="bottom-left-corner"></div>
     <div class="vertical-left left"></div>
     <div class="fs-bg"></div>
-    {% if include.bottom_fs != null or include.bottom_fs %}
+    {% if include.bottom_fs != null and include.bottom_fs %}
         <div class="triangle-top-to-the-left"></div>
     {% else %}
-        {% if include.left_fs != null or include.left_fs %}
-            <div class="triangle-bottom-to-the-right"></div>
+        {% if include.left_fs != null and include.left_fs %}
+            {% if include.on_the_right != null and include.on_the_right %}
+                <div class="triangle-bottom-to-the-left-on-the-right-side"></div>
+            {% else %}
+                <div class="triangle-bottom-to-the-right"></div>
+            {% endif %}
         {% else %}
             <div class="triangle-bottom-to-the-left"></div>
         {% endif %}

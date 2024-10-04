@@ -115,6 +115,16 @@
     bottom: -8px;
 }
 
+.triangle-bottom-to-the-left-on-the-right-side {
+	background: url("../images/Floating_section_main/triangle-bottom-to-the-left.png");
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	top: auto;
+    right: 10px;
+    bottom: -8px;
+}
+
 .triangle-top-to-the-left {
 	background: url("../images/Floating_section_main/triangle-top-to-the-left.png");
 	width: 10px;

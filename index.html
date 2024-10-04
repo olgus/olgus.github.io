@@ -9,19 +9,60 @@ food: Pizza
 <!doctype html>
 <html class="container">
 <head>
-<link rel="stylesheet" href="assets/css/mystyle.css">
+    <script src="assets/js/script.js"></script>
+    <link rel="stylesheet" href="assets/css/mystyle.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=VT323">
 </head>
-<body class="container">
+<body onload="addEventListeners()">
 
-<script>
-    window.addEventListener('scroll', () => { document.body.style.setProperty('--scroll', window.pageYOffset / (document.body.offsetHeight - window.innerHeight));}, false);
-</script>
 
-<h1>{{ page.food }}</h1>
+<!-- <h1>{{ page.food }}</h1> -->
 
-<a href="./Projects/productivityTimer.html">Projects</a>
+<!-- <div class="customAnimation"></div> -->
 
-<div class="customAnimation"></div>
-
+<div class="content-container">
+    <div class="background-cell">
+        <div class="background-image"></div>
+    </div>
+<!-- <div class="cd-wrapper">
+    <div class="inner" id="flare-stripe"></div>
+    <div class="gradient-glare inner"></div>
+    <div class="inner rotation" id="cd-image"></div>
+</div> -->
+    <div class="content-item header-placeholder">
+    </div>
+    <div class="content-item mid-section-1"></div>
+    <div class="content-item mid-section-2">
+        <div class="working-section">
+            <div class="pc-background">
+            </div>
+            <div class="pc-wrapper">
+                <div class="pc-screen">
+                    <span id="text-on-screen" class="typewriter-effect pc-screen-clip">
+                </div>
+                <div class="cd-rom-blink" id="cd-rom-blink-on-insert"></div>
+                <div class="cd-rom">
+                    <!-- <div class="cd-rom-cover"></div> -->
+                    <div class="cd-with-a-flash inner"></div>
+                </div>
+            </div>
+            <div class="cd-rack"></div>
+            <div class="cd-1"></div>
+            <div class="keyboard"></div>
+            <div class="mouse"></div>
+            <div class="arrow" id="arrow-help"></div>
+        </div>
+    </div>
+    <div class="content-item mid-section-3">
+        <button onclick="showProjectDescription(1)">Project 1</button>
+        <button onclick="showProjectDescription(2)">Project 2</button>
+        <button onclick="showProjectDescription(3)">Project 3</button>
+    </div>
+    <div class="content-item mid-section-4"></div>
+    <div class="footer-placeholder content-item">
+        <div class="git-icon"></div>
+        <div class="save-cv-icon"></div>
+    </div>
+</div>
 </body>
 </html> 
