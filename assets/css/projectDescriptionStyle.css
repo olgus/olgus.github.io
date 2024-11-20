@@ -12,7 +12,7 @@ body, html{
 .pd-grid-container{
   display: grid;
   grid-template-columns: 1fr 30% 30% 1fr;
-  grid-template-rows: 198px auto auto;
+  grid-template-rows: auto auto auto;
   background-color: var(--main-background-color);
   height: 100%;
 }
@@ -24,6 +24,10 @@ body, html{
 
 .header-animation-grid-item{
   grid-column: 1 / span 2; 
+}
+
+.full-width-grid-item {
+  grid-column: 1 / span 4; 
 }
 
 .header-title-grid-item{

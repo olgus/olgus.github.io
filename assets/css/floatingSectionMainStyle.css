@@ -173,3 +173,22 @@
     from { top: 0px; };
     to { top: -10px; };
 }
+
+.shadow-bottom {
+	background: url("../images/Floating_section_main/floating-section-shadow.png");
+	width: calc(100% - 5px - mod(100% - 5px, 6px));
+	position: absolute;
+	background-repeat: repeat-x;
+	height: 6px;
+	left: 5px;
+}
+
+.shadow-right {
+	background: url("../images/Floating_section_main/floating-section-shadow.png");
+	height: calc(100% - mod(100%, 6px));
+	position: absolute;
+	background-repeat: repeat-y;
+	width: 6px;
+	top: 5px;
+	right: -6px;
+}

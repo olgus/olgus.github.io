@@ -7,12 +7,13 @@ layout: none
 
 <head>
     <script src="assets/js/vm-script.js"></script>
+    <link rel="stylesheet" href="assets/css/siteWideStyle.css">
     <link rel="stylesheet" href="assets/css/projectStyle.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=VT323">
 </head>
 
 <body onload="onLoad()">
-    <div id="hints" class="hints-overlay" onclick="updateHintsOnClick()">
+    <div id="hints" class="overlay" onclick="updateHintsOnClick()">
         <div class="container-h">
             <div class="top-free-space"></div>
             <div class="container-v">
@@ -75,6 +76,19 @@ layout: none
         </div>
         <div id="continue-label-id" class="continue-label">Click anywhere to see the next hint</div>
         <div class="colored-overlay"></div>
+    </div>
+    <div id="loading-overlay" class="overlay">
+        <div class="float-on-top rotating-coin-section">
+            <div class="rotating-coin"></div>
+            <div class="loading-label">Loading...</div>
+        </div>
+        <div class="colored-overlay"></div>
+    </div>
+    <div id="achievements-overlay" class="overlay">
+        <div class="colored-overlay" onclick="hideAchievements()"></div>
+        <div id="achievements" class="achievements">
+            {%include Sections/achievementsSection.html %}
+        </div>
     </div>
     <div class="sakura-branches">
         <div id="top-sakura-branch-shadow-id"
@@ -215,6 +229,7 @@ layout: none
         </div>
         <div id="light-pole-bottom-id" class="light-pole light-pole-bottom light-pole-animation-in light-pole-animation"></div>
     </div>
+    <div class="icon-achievements" onclick="showAchievements()"></div>
 </body>
 
 </html>

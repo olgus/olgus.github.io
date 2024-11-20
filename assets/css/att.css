@@ -1,0 +1,158 @@
+---
+---
+
+:root {
+    --header-color: #C09775FF;
+    --main-background-color: #F9F4EDFF;
+	--footer-link: url("../images/coffeeFooter.png");
+}
+
+body, html{
+	margin: 0;
+	padding: 0;
+}
+
+.bench-objects {
+	background: url('../images/VendingMachine_ext_2x.png') 0px 0px;
+	width: 1207px;
+	height: 404px;
+}
+
+.top-fill {
+	width: 100%;
+	height: 404px;
+	background: url('../images/boards_fill.png');
+	background-repeat: round;
+}
+
+.container-top {
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.fill-section {
+	width: 100%;
+	flex: 1 1 0px;
+}
+
+.main-section {
+	width: 1207px;
+}
+
+.coffee-cup {
+	height: 198px;
+	width: 276px;
+	background: url('../images/VendingMachine_2x.png') 0px -1493px;
+	position: relative;
+	left: 47px;
+}
+
+.cup-border {
+	width: 373px;
+	height: 198px;
+	background: url('../images/VendingMachine_2x.png') 0px -1695px;
+	position: absolute;
+}
+
+.whatsnext-icon{
+	background: url('../images/VendingMachine_ext_2x.png') -550px -876px;
+	width: 187px;
+	height: 187px;
+}
+
+.whatsnext-icon-halved {
+	background: url('../images/VendingMachine_ext.png') -275px -430px;
+	width: 93px;
+	height: 93px;
+}
+
+/* gallery starts */
+.gallery-preview-block {
+	width: 169px;
+	height: 216px;
+	position: relative;
+	right: -536px;
+	top: 153px;
+	border: solid red 1px;
+}
+
+.image-on-the-screen-preview{
+	width: 169px;
+	height: 130px;
+	position: relative;
+
+	border: solid green 1px;
+}
+
+.tamagochi-button-block {
+	width: 31px;
+	height: 35px;
+	position: absolute;
+}
+
+.tamagochi-button {
+	width: 32px;
+	height: 32px;
+	background: url('../images/VendingMachine_ext_2x.png') -0px -828px;
+	position: relative;
+}
+
+.tamagochi-button-block-left {
+	left: 22px;
+	top: 157px;
+}
+
+.tamagochi-button-left-image {
+	left: 8px;
+	top: 7px;
+	background: url('../images/VendingMachine_ext_2x.png') -64px -828px;
+	width: 12px;
+	height: 18px;
+	position: relative;
+}
+
+.tamagochi-button-block-right {
+	right: 18px;
+	top: 157px;
+}
+
+.tamagochi-button-right-image {
+	left: 13px;
+	top: 7px;
+	background: url('../images/VendingMachine_ext_2x.png') -52px -828px;
+	width: 12px;
+	height: 18px;
+	position: relative;
+}
+
+.tamagochi-button-block-close-up {
+	right: 68px;
+	top: 179px;
+}
+
+.tamagochi-button-close-up-image {
+	left: 7px;
+	top: 8px;
+	background: url('../images/VendingMachine_ext_2x.png') -33px -828px;
+	width: 17px;
+	height: 18px;
+	position: relative;
+}
+
+.tamagochi-button-on-hover {
+	filter: brightness(115%);
+}
+
+.tamagochi-button-mouse-down {
+	filter: brightness(85%);
+	top: 2px;
+}
+
+.image-preview-style{
+	width: inherit;
+	height: inherit;
+	object-fit: contain;
+}
+/* gallery ends */
+

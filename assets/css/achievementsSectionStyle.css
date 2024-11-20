@@ -1,0 +1,24 @@
+---
+---
+
+.achievements-section {
+    background-color: rgb(185, 0, 255);
+}
+
+.achievements {
+	background-color: var(--vm-contrast-color);
+}
+
+.achievements-title {
+    font: 24px 'VT323', monospace;
+}
+
+.achievements-icon {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(0, 0, 255);
+}
+
+.achievements-description {
+    font: 24px 'VT323', monospace;
+}

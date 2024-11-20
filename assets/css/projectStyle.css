@@ -71,12 +71,12 @@ body, html{
 
 .cat-free-space{
 	width: 1510px;
-	height: 122px;
+	height: 147px;
 	position: absolute;
 }
 
 .cat-top {
-	background: url('../images/VendingMachine_2x.png') -529px 0px; 
+	background: url('../images/VendingMachine_2x.png') -529px -41px;
 }
 
 .vm-bottom{
@@ -87,7 +87,7 @@ body, html{
 }
 /* flex sections end */
 
-/* grid starts */
+/* grid starts NOT NEEDED ANYMORE? */
 .grid-containter{
 	display: grid;
 	grid-template-columns: auto auto auto;
@@ -126,7 +126,7 @@ body, html{
 .stock {
 	width: 1510px;
 	height: 900px;
-	background: url('../images/VendingMachine_2x.png') -529px -123px;
+	background: url('../images/VendingMachine_2x.png') -529px -187px;
 	transform-origin: 50% 0%;
   	position: relative;
 }
@@ -278,13 +278,13 @@ body, html{
 /* product display starts */
 .product-display-light-reflection {
 	width: 472px;
-	height: 422px;
-	background: url('../images/VendingMachine_2x.png') -1448px -1066px;
+	height: 377px;
+	background: url('../images/VendingMachine_2x.png') -1448px -1111px;
 	position: absolute;
-	top: 151px;
+	top: 196px;
 	left: 454px;
 	z-index: 10;
-  	pointer-events: none;
+	pointer-events: none;
 }
 /* product display ends */
 
@@ -661,9 +661,9 @@ body, html{
 }
 
 .coming-soon-sticker {
-	width: 105px;
-	height: 49px;
-	background: url('../images/VendingMachine_2x.png') -149px -1040px;
+	width: 108px;
+	height: 50px;
+	background: url('../images/VendingMachine_2x.png') -84px -1946px;
 	position: absolute;
 	top: 97px;
 	left: 759px;
@@ -679,7 +679,7 @@ body, html{
 	height: 147px;
 	background: url('../images/VendingMachine_2x.png') -149px -0px;
 	position: absolute;
-	top: 83px;
+	top: 30px;
 	left: -12px;
 }
 
@@ -688,7 +688,7 @@ body, html{
 	height: 175px;
 	background: url('../images/VendingMachine_2x.png') -295px -161px;
 	position: relative;
-	top: 222px;
+	top: 169px;
 	left: 21px;
 }
 
@@ -697,7 +697,7 @@ body, html{
 	height: 197px;
 	background: url('../images/VendingMachine_2x.png') -148px -148px;
 	position: absolute;
-	top: 209px;
+	top: 156px;
 	left: 8px;
 }
 
@@ -706,17 +706,17 @@ body, html{
 	height: 127px;
 	background: url('../images/VendingMachine_2x.png') -148px -350px;
 	position: absolute;
-	top: 411px;
+	top: 358px;
 	left: -2px;
 }
 
 .cv-pdf-highlight {
-	width: 143px;
+	width: 142px;
 	height: 183px;
-	background: url('../images/VendingMachine_2x.png') -148px -478px;
+	background: url('../images/VendingMachine_2x.png') -149px -478px;
 	position: absolute;
-	top: 533px;
-	left: 0px;
+	top: 480px;
+	left: 1px;
 }
 /* links end */
 
@@ -790,7 +790,7 @@ body, html{
 /* help starts */
 .help-sticker {
 	width: 232px;
-	height: 168px;
+	height: 182px;
 	position: absolute;
 	top: 463px;
 	left: 51px;
@@ -798,7 +798,7 @@ body, html{
 
 .help-icon {
 	width: 208px;
-	height: 144px;
+	height: 160px;
 	background: url('../images/VendingMachine_2x.png') -148px -728px;
 	position: relative;
 	top: 10px;
@@ -807,16 +807,16 @@ body, html{
 
 .help-highlight {
 	width: 232px;
-	height: 167px;
-	background: url('../images/VendingMachine_2x.png') -148px -873px;
+	height: 183px;
+	background: url('../images/VendingMachine_2x.png') -148px -889px;
 	position: relative;
-	top: -145px;
-  	left: 0px;
+	top: -161px;
+	left: 0px;
 }
 /* help ends */
 
 /* navigation hints start */
-.hints-overlay {
+.overlay {
 	width: 100%;
 	height: 100%;
 	position: absolute;
@@ -869,8 +869,8 @@ body, html{
 
 .links-hint {
 	position: absolute;
-	top: 147px;
-	right: 138px;
+	top: 106px;
+	right: 148px;
 	opacity: 0%;
 }
 
@@ -900,17 +900,69 @@ body, html{
 }
 /* navigation hints end */
 
+/* loading project page starts */
+.rotating-coin-section {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 12%;
+	height: 300px;
+}
+
+.rotating-coin{
+	background: url('../images/VendingMachine_2x.png') -24px -1896px;
+	width: 47px;
+	height: 47px;
+	animation: steps(9) 0.5s infinite 0s forwards rotating-coin-animation,
+		linear 0.99s 1 0s forwards dropping-coin-animation;
+	position: relative;
+}
+
+@keyframes rotating-coin-animation{
+	0%  {background-position-x: -24px;}
+	100% {background-position-x: -456px;}
+}
+
+@keyframes dropping-coin-animation{
+	0%  { top: 0px; }
+	100% { top: 250px; }
+}
+
+.loading-label{
+	font: 31px 'VT323', monospace;
+	color: #FEC0EBFF;
+	position: absolute;
+	z-index: 110;
+	bottom: 10px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+/* loading project page ends */
+
+/* achievements section starts */
+.icon-achievements {
+	background: url('../images/VendingMachine_2x.png') -200px -1193px;
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	left: 1289px;
+	top: 635px;
+	z-index: 35;
+}
+
+.achievements {
+	background-color: var(--vm-contrast-color);
+	min-width: 300px;
+	min-height: 300px;
+	z-index: 200;
+	display: block;
+	margin: auto;
+}
+/* achievements section ends */
+
 /* common styles start */
 @keyframes show-highlight {
 	from { opacity: 0%; }
 	to { opacity: 100%; }
-}
-
-@keyframes blink {
-	0% { opacity: 0%; }
-	19.9% { opacity: 0%; }
-	20% { opacity: 100%; }
-	100% { opacity: 100%; }
 }
 
 .highlight {
@@ -924,8 +976,8 @@ body, html{
 .float-on-top {
 	z-index: 200;
 }
-
-.cursor-pointer {
-	cursor: pointer;
-}
 /* common styles end */
+
+.show{
+	display: flex;
+}

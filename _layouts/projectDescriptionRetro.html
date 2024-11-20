@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>{{ page.title }}</title>
+
+    <script src="../assets/js/projectDescription.js"></script>
+    
+    <link rel="stylesheet" href="../assets/css/att.css">
+    <link rel="stylesheet" href="../assets/css/projectDescriptionStyle.css">
+</head>
+
+<body onload="onLoad()">
+    <div class="pd-grid-container">
+        <div class="grid-item full-width-grid-item">
+            <div class="container-top">
+                <div class="fill-section">
+                    <div class="top-fill"></div>
+                </div>
+                <div class="main-section">
+                    <div class="bench-objects">
+                        <div class="gallery-preview-block">
+                          <div class="image-on-the-screen-preview">
+                              <img id="image-preview-id" class="image-preview-style" src="../assets/images/ProductivityTimerScreenshots/screenshot-3.png">
+                          </div>
+
+                          <div class="tamagochi-button-block tamagochi-button-block-left">
+                            <div class="tamagochi-button" 
+                              onmousedown="tamagochiButtonOnMouseDown(this)"
+                              onmouseup="tamagochiButtonOnMouseUp(this)"
+                              onmouseenter="tamagochiButtonOnMouseEnter(this)"
+                              onmouseleave="tamagochiButtonOnMouseLeave(this)">
+                              <div class="tamagochi-button-left-image">
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="tamagochi-button-block tamagochi-button-block-right">
+                            <div class="tamagochi-button"
+                              onmousedown="tamagochiButtonOnMouseDown(this)"
+                              onmouseup="tamagochiButtonOnMouseUp(this)"
+                              onmouseenter="tamagochiButtonOnMouseEnter(this)"
+                              onmouseleave="tamagochiButtonOnMouseLeave(this)">
+                              <div class="tamagochi-button-right-image">
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="tamagochi-button-block tamagochi-button-block-close-up">
+                            <div class="tamagochi-button"
+                              onmousedown="tamagochiButtonOnMouseDown(this)"
+                              onmouseup="tamagochiButtonOnMouseUp(this)"
+                              onmouseenter="tamagochiButtonOnMouseEnter(this)"
+                              onmouseleave="tamagochiButtonOnMouseLeave(this)">
+                              <div class="tamagochi-button-close-up-image">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>          
+                </div>
+            </div>
+        </div>
+        <!-- <div class="grid-item header-title-grid-item">
+          <div class="projectTitle">
+            {{ page.projectTitle }}
+          </div>
+          <div class="projectMotto">
+            {{ page.projectMotto }}
+          </div>
+        </div> -->
+        <div class="grid-item"></div>
+        <div class="grid-item content-grid-item inner-grid">
+          <div class="inner-grid-item-odd">
+            <div class="text-icon-block">
+              <div class="icon icon-motivation"></div>
+              <div class="text-header">Motivation</div>
+            </div>
+            <div class="text-section text-left">{{ page.motivation | markdownify | newline_to_br }}</div>
+          </div>
+          <div class="inner-grid-item-even">
+            <div class="text-icon-block">
+              <div class="text-header">Why this project was important?</div>
+              <div class="icon icon-importance"></div>
+            </div>
+            <div class="text-section text-right">{{ page.importance | markdownify | newline_to_br }}</div>
+          </div>
+          <div class="inner-grid-item-odd">
+            <div class="text-icon-block">
+              <div class="icon icon-features"></div>
+              <div class="text-header">Killer features</div>
+            </div>
+            <div class="text-section text-left">{{ page.killerFeatures | markdownify | newline_to_br }}</div>
+          </div>  
+          <div class="inner-grid-item-even">
+            <div class="text-icon-block">
+              <div class="text-header">What have I learned?</div>
+              <div class="icon icon-learned"></div>
+            </div>
+            <div class="text-section text-right">{{ page.learned | markdownify | newline_to_br }}</div>
+          </div>
+          {% if page.next %}
+          <div class="inner-grid-item-odd">
+            <div class="text-icon-block">
+              <div class="icon icon-next"></div>
+              <div class="text-header">What's next?</div>
+            </div>
+            <div class="text-section text-left">{{ page.next | markdownify | newline_to_br }}</div>
+          </div>
+          {% endif %}
+        </div>
+        <div class="grid-item"></div>
+        <div class="grid-item footer-grid-item">
+            {%include Footers/footerWithLinks.html %}
+        </div>   
+      </div>
+</body>
+
+</html>

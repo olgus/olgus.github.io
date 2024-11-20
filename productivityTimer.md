@@ -1,6 +1,7 @@
 ---
-layout: projectDescription
+layout: projectDescriptionRetro
 banner: Headers/coffee_banner.html
+screenshotGallery: "../assets/images/ProductivityTimerScreenshots/"
 title: Productivity Timer
 projectTitle: Productivity Timer
 projectMotto: Energizing like a cup of aromatic morning coffee

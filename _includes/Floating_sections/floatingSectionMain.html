@@ -7,22 +7,27 @@
     <div class="top-horizontal top"></div>
     <div class="top-right-corner"></div>
     <div class="vertical-right right"></div>
+    <div class="shadow-right"></div>
     <div class="bottom-right-corner"></div>
     <div class="bottom-horizontal bottom"></div>
     <div class="bottom-left-corner"></div>
     <div class="vertical-left left"></div>
     <div class="fs-bg"></div>
-    {% if include.bottom_fs != null and include.bottom_fs %}
-        <div class="triangle-top-to-the-left"></div>
+    <div class="shadow-bottom"></div>
+    {% if include.triangleless %}
     {% else %}
-        {% if include.left_fs != null and include.left_fs %}
-            {% if include.on_the_right != null and include.on_the_right %}
-                <div class="triangle-bottom-to-the-left-on-the-right-side"></div>
-            {% else %}
-                <div class="triangle-bottom-to-the-right"></div>
-            {% endif %}
+        {% if include.bottom_fs %}
+            <div class="triangle-top-to-the-left"></div>
         {% else %}
-            <div class="triangle-bottom-to-the-left"></div>
+            {% if include.left_fs %}
+                {% if include.on_the_right %}
+                    <div class="triangle-bottom-to-the-left-on-the-right-side"></div>
+                {% else %}
+                    <div class="triangle-bottom-to-the-right"></div>
+                {% endif %}
+            {% else %}
+                <div class="triangle-bottom-to-the-left"></div>
+            {% endif %}
         {% endif %}
     {% endif %}
 </div>
