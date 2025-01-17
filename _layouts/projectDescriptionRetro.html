@@ -7,113 +7,160 @@
     <script src="../assets/js/projectDescription.js"></script>
     
     <link rel="stylesheet" href="../assets/css/att.css">
+    <link rel="stylesheet" href="../assets/css/siteWideStyle.css">
     <link rel="stylesheet" href="../assets/css/projectDescriptionStyle.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=VT323|Oxanium|Overpass+Mono">
 </head>
 
-<body onload="onLoad()">
-    <div class="pd-grid-container">
-        <div class="grid-item full-width-grid-item">
-            <div class="container-top">
-                <div class="fill-section">
-                    <div class="top-fill"></div>
+<body onload="onLoad('{{ page.screenshotGallery | xml_escape }}')">
+  <div id="overlay-id" class="overlay">
+    <div class="colored-overlay" onclick="hideGallery()">
+    </div>
+    <div class="pop-up-gallery-block">
+      <div class="pop-up-gallery-bg">
+        <div class="pop-up-gallery-items">
+          <div class="button-gallery">
+            <div class="tamagochi-button-block tamagochi-button-gallery-block">
+              <div class="tamagochi-button cursor-pointer"
+                onmousedown="tamagochiButtonNextImageOnMouseDown(this, 'left', false)"
+                onmouseup="tamagochiButtonOnMouseUp(this)"
+                onmouseenter="tamagochiButtonOnMouseEnter(this)"
+                onmouseleave="tamagochiButtonOnMouseLeave(this)">
+                <div class="tamagochi-button-left-image">
                 </div>
-                <div class="main-section">
-                    <div class="bench-objects">
-                        <div class="gallery-preview-block">
-                          <div class="image-on-the-screen-preview">
-                              <img id="image-preview-id" class="image-preview-style" src="../assets/images/ProductivityTimerScreenshots/screenshot-3.png">
-                          </div>
+              </div>
+            </div>
+          </div>
+          <div class="image-on-screen-block">
+            <img id="image-id" class="image-style">
+          </div>
+          <div class="button-gallery">
+            <div class="tamagochi-button-block tamagochi-button-gallery-block">
+              <div class="tamagochi-button cursor-pointer"
+                onmousedown="tamagochiButtonNextImageOnMouseDown(this, 'right', false)"
+                onmouseup="tamagochiButtonOnMouseUp(this)"
+                onmouseenter="tamagochiButtonOnMouseEnter(this)"
+                onmouseleave="tamagochiButtonOnMouseLeave(this)">
+                <div class="tamagochi-button-right-image">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+  <div class="pd-grid-container">
+    <div class="grid-item full-width-grid-item">
+        <div class="container-top">
+            <div class="fill-section">
+                <div class="top-fill">
+                  {%include Headers/coffee_cup_insert.html %}
+                </div>
+            </div>
+            <div class="main-section">
+                <div class="bench-objects">
+                    <div class="gallery-preview-block">
+                      <div class="image-on-the-screen-preview">
+                        <div id="preview-gallery-hint-id" class="preview-gallery-hint">Press arrow buttons below to view screenshots
+                        <br>
+                        Press middle button to enlarge a gallery</div>
+                        <img id="image-preview-id" class="image-style">
+                      </div>
 
-                          <div class="tamagochi-button-block tamagochi-button-block-left">
-                            <div class="tamagochi-button" 
-                              onmousedown="tamagochiButtonOnMouseDown(this)"
-                              onmouseup="tamagochiButtonOnMouseUp(this)"
-                              onmouseenter="tamagochiButtonOnMouseEnter(this)"
-                              onmouseleave="tamagochiButtonOnMouseLeave(this)">
-                              <div class="tamagochi-button-left-image">
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="tamagochi-button-block tamagochi-button-block-right">
-                            <div class="tamagochi-button"
-                              onmousedown="tamagochiButtonOnMouseDown(this)"
-                              onmouseup="tamagochiButtonOnMouseUp(this)"
-                              onmouseenter="tamagochiButtonOnMouseEnter(this)"
-                              onmouseleave="tamagochiButtonOnMouseLeave(this)">
-                              <div class="tamagochi-button-right-image">
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="tamagochi-button-block tamagochi-button-block-close-up">
-                            <div class="tamagochi-button"
-                              onmousedown="tamagochiButtonOnMouseDown(this)"
-                              onmouseup="tamagochiButtonOnMouseUp(this)"
-                              onmouseenter="tamagochiButtonOnMouseEnter(this)"
-                              onmouseleave="tamagochiButtonOnMouseLeave(this)">
-                              <div class="tamagochi-button-close-up-image">
-                              </div>
-                            </div>
+                      <div class="tamagochi-button-block tamagochi-button-preview-block-left">
+                        <div class="tamagochi-button cursor-pointer" 
+                          onmousedown="tamagochiButtonNextImageOnMouseDown(this, 'left', true)"
+                          onmouseup="tamagochiButtonOnMouseUp(this)"
+                          onmouseenter="tamagochiButtonOnMouseEnter(this)"
+                          onmouseleave="tamagochiButtonOnMouseLeave(this)">
+                          <div class="tamagochi-button-left-image">
                           </div>
                         </div>
-                    </div>          
-                </div>
+                      </div>
+
+                      <div class="tamagochi-button-block tamagochi-button-preview-block-right">
+                        <div class="tamagochi-button cursor-pointer"
+                          onmousedown="tamagochiButtonNextImageOnMouseDown(this, 'right', true)"
+                          onmouseup="tamagochiButtonOnMouseUp(this)"
+                          onmouseenter="tamagochiButtonOnMouseEnter(this)"
+                          onmouseleave="tamagochiButtonOnMouseLeave(this)">
+                          <div class="tamagochi-button-right-image">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="tamagochi-button-block tamagochi-button-preview-block-close-up">
+                        <div class="tamagochi-button cursor-pointer"
+                          onmousedown="tamagochiButtonCloseUpOnMouseDown(this)"
+                          onmouseup="tamagochiButtonOnMouseUp(this)"
+                          onmouseenter="tamagochiButtonOnMouseEnter(this)"
+                          onmouseleave="tamagochiButtonOnMouseLeave(this)">
+                          <div class="tamagochi-button-close-up-image">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="light-reflection-small tamagochi-reflection"></div>
+                    </div>
+                </div>          
             </div>
         </div>
-        <!-- <div class="grid-item header-title-grid-item">
-          <div class="projectTitle">
-            {{ page.projectTitle }}
-          </div>
-          <div class="projectMotto">
-            {{ page.projectMotto }}
-          </div>
-        </div> -->
-        <div class="grid-item"></div>
-        <div class="grid-item content-grid-item inner-grid">
-          <div class="inner-grid-item-odd">
-            <div class="text-icon-block">
-              <div class="icon icon-motivation"></div>
-              <div class="text-header">Motivation</div>
-            </div>
-            <div class="text-section text-left">{{ page.motivation | markdownify | newline_to_br }}</div>
-          </div>
-          <div class="inner-grid-item-even">
-            <div class="text-icon-block">
-              <div class="text-header">Why this project was important?</div>
-              <div class="icon icon-importance"></div>
-            </div>
-            <div class="text-section text-right">{{ page.importance | markdownify | newline_to_br }}</div>
-          </div>
-          <div class="inner-grid-item-odd">
-            <div class="text-icon-block">
-              <div class="icon icon-features"></div>
-              <div class="text-header">Killer features</div>
-            </div>
-            <div class="text-section text-left">{{ page.killerFeatures | markdownify | newline_to_br }}</div>
-          </div>  
-          <div class="inner-grid-item-even">
-            <div class="text-icon-block">
-              <div class="text-header">What have I learned?</div>
-              <div class="icon icon-learned"></div>
-            </div>
-            <div class="text-section text-right">{{ page.learned | markdownify | newline_to_br }}</div>
-          </div>
-          {% if page.next %}
-          <div class="inner-grid-item-odd">
-            <div class="text-icon-block">
-              <div class="icon icon-next"></div>
-              <div class="text-header">What's next?</div>
-            </div>
-            <div class="text-section text-left">{{ page.next | markdownify | newline_to_br }}</div>
-          </div>
-          {% endif %}
-        </div>
-        <div class="grid-item"></div>
-        <div class="grid-item footer-grid-item">
-            {%include Footers/footerWithLinks.html %}
-        </div>   
+    </div>
+    <!-- <div class="grid-item header-title-grid-item">
+      <div class="projectTitle">
+        {{ page.projectTitle }}
       </div>
+      <div class="projectMotto">
+        {{ page.projectMotto }}
+      </div>
+    </div> -->
+    <div class="grid-item"></div>
+    <div class="grid-item content-grid-item inner-grid">
+      <div class="inner-grid-item-odd">
+        <div class="text-icon-block">
+          <div class="icon icon-motivation"></div>
+          <div class="text-header">Motivation</div>
+        </div>
+        <div class="text-section text-left">{{ page.motivation | markdownify | newline_to_br }}</div>
+      </div>
+      <div class="inner-grid-item-even">
+        <div class="text-icon-block">
+          <div class="text-header">Why this project was important?</div>
+          <div class="icon icon-importance"></div>
+        </div>
+        <div class="text-section text-right">{{ page.importance | markdownify | newline_to_br }}</div>
+      </div>
+      <div class="inner-grid-item-odd">
+        <div class="text-icon-block">
+          <div class="icon icon-features"></div>
+          <div class="text-header">Killer features</div>
+        </div>
+        <div class="text-section text-left">{{ page.killerFeatures | markdownify | newline_to_br }}</div>
+      </div>  
+      <div class="inner-grid-item-even">
+        <div class="text-icon-block">
+          <div class="text-header">What have I learned?</div>
+          <div class="icon icon-learned"></div>
+        </div>
+        <div class="text-section text-right">{{ page.learned | markdownify | newline_to_br }}</div>
+      </div>
+      {% if page.next %}
+      <div class="inner-grid-item-odd">
+        <div class="text-icon-block">
+          <div class="icon icon-next"></div>
+          <div class="text-header">What's next?</div>
+        </div>
+        <div class="text-section text-left">{{ page.next | markdownify | newline_to_br }}</div>
+      </div>
+      {% endif %}
+    </div>
+    <div class="grid-item"></div>
+    <div class="grid-item footer-grid-item">
+        {%include Footers/footerWithLinks.html %}
+    </div>   
+  </div>
 </body>
 
 </html>

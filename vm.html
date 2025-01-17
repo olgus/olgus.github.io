@@ -7,12 +7,13 @@ layout: none
 
 <head>
     <script src="assets/js/vm-script.js"></script>
+
     <link rel="stylesheet" href="assets/css/siteWideStyle.css">
     <link rel="stylesheet" href="assets/css/projectStyle.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=VT323">
 </head>
 
-<body onload="onLoad()">
+<body class="scroll-off" ="onLoad()">
     <div id="hints" class="overlay" onclick="updateHintsOnClick()">
         <div class="container-h">
             <div class="top-free-space"></div>
@@ -122,7 +123,7 @@ layout: none
                     <div id="cat-tail-reflection-id" class="cat-tail tail-reflection"></div>
                     <div id="cat-tail-id" class="cat-tail cursor-pointer" onclick="moveCatTail()"></div>
                     <div class="display">
-                        <div class="display-light-reflection"></div>
+                        <div class="light-reflection-small display-screen-light-reflection"></div>
                         <div class="display-text-field">
                             <span id="text-on-screen" class="typewriter-effect display-screen-clip">
                         </div>

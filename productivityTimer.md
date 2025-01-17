@@ -1,12 +1,13 @@
 ---
 layout: projectDescriptionRetro
 banner: Headers/coffee_banner.html
-screenshotGallery: "../assets/images/ProductivityTimerScreenshots/"
+screenshotGallery: '{"folderName": "..//assets//images//ProductivityTimerScreenshots", "fileNames": ["screenshot-1.png", "screenshot-2.png", "screenshot-3.png"]}'
+screenshotGallery2: '{&quot;folderName&quot;: &quot;..//assets//images//ProductivityTimerScreenshots&quot;, &quot;fileNames&quot;: [&quot;screenshot-1.png&quot;, &quot;screenshot-2.png&quot;, &quot;screenshot-3.png&quot;]}'
 title: Productivity Timer
 projectTitle: Productivity Timer
 projectMotto: Energizing like a cup of aromatic morning coffee
 motivation: | 
-    Pomodoro-style timers are widely used for increasing productivity while keeping up with proper resting times. I wanted to combine traditional idea of a productivity timer with higher level of customization for more comfortable personal use.
+    Pomodoro-style timers are widely used for increasing productivity while keeping up with proper resting times. I wanted to upgrade traditional idea of a productivity timer with extended customization for more comfortable personal use.
 killerFeatures: | 
     - Cycle customization: durations for work and rest sections, long rest section inclusion, amount of work cycles completed before long rest section kicking in
     - Play/pause: for keeping the flow going!
