@@ -243,10 +243,10 @@ function openProjectPage() {
     if (coinIsInserted) {
         switch(currentProject) {
             case 0:
-                pageName = "../productivityTimer";
+                pageName = "../Projects/productivityTimer";
                 break;
             case 1:
-                pageName = "../birthdayBot";
+                pageName = "../Projects/birthdayBot";
                 break;
             default:
                 break;

@@ -1,5 +1,5 @@
 ---
-layout: projectDescription
+layout: projectDescriptionRetro
 banner: Headers/bubbles_banner.html
 title: Birthday Bot
 projectTitle: Birthday bot

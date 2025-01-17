@@ -6,9 +6,9 @@
 
     <script src="../assets/js/projectDescription.js"></script>
     
-    <link rel="stylesheet" href="../assets/css/att.css">
-    <link rel="stylesheet" href="../assets/css/siteWideStyle.css">
+    <link rel="stylesheet" href="../assets/css/projectBannerStyle.css">
     <link rel="stylesheet" href="../assets/css/projectDescriptionStyle.css">
+    <link rel="stylesheet" href="../assets/css/siteWideStyle.css">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=VT323|Oxanium|Overpass+Mono">
 </head>
@@ -56,7 +56,9 @@
         <div class="container-top">
             <div class="fill-section">
                 <div class="top-fill">
-                  {%include Headers/coffee_cup_insert.html %}
+                  {% if page.banner %}
+                    {% include {{ page.banner }} %}
+                  {% endif %}
                 </div>
             </div>
             <div class="main-section">

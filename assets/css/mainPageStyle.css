@@ -885,8 +885,9 @@ body, html{
 	background: url('../images/VendingMachine_2x.png') -24px -1896px;
 	width: 47px;
 	height: 47px;
-	animation: steps(9) 0.5s infinite 0s forwards rotating-coin-animation,
-		linear 0.99s 1 0s forwards dropping-coin-animation;
+	top: 110px;
+	animation: steps(9) 0.5s infinite 0s forwards rotating-coin-animation;
+		/* linear 0.99s 1 0s forwards dropping-coin-animation; */
 	position: relative;
 }
 
