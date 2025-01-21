@@ -6,14 +6,17 @@ layout: none
 <html>
 
 <head>
-    <script src="assets/js/vm-script.js"></script>
+    <script src="../assets/js/vm-script.js"></script>
+    <script src="../assets/js/cookieHandler.js"></script>
+    <script src="../assets/js/animationHandler.js"></script>
+    <script src="../assets/js/achievementHandler.js"></script>
 
     <link rel="stylesheet" href="assets/css/siteWideStyle.css">
     <link rel="stylesheet" href="assets/css/mainPageStyle.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=VT323">
 </head>
 
-<body class="scroll-off" ="onLoad()">
+<body class="scroll-off" onload="onLoad()">
     <div id="hints" class="overlay" onclick="updateHintsOnClick()">
         <div class="container-h">
             <div class="top-free-space"></div>

@@ -2,14 +2,14 @@
 ---
 :root {
     --header-color: #CCE9FAFF;
-    --main-background-color: #F3FAFFFF;
+    --main-background-color: rgb(247, 252, 255);
     --footer-link: url("../images/birthdayBotFooter.png");
 }
 
 .header-bgc {
 	height: 198px;
 	width: 100%;
-	background-color: var(--header-color);
+	/* background-color: var(--header-color); */
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -18,7 +18,7 @@
 .bubbles {
 	height: 196px;
 	width: 372px;
-	background: url('../images/VendingMachine_2x.png') 0px -1246px;
+	/* background: url('../images/VendingMachine_2x.png') 0px -1246px; */
 	margin-bottom: 0px;
   	margin-top: auto;
 }
@@ -71,4 +71,18 @@
 @keyframes bubble-grow{
 	0%  {background-position-x: -554px;}
 	100% {background-position-x: -1014px;}
+}
+
+.top-fill {
+	width: 100%;
+	height: 404px;
+	background: url('../images/boards_fill_grey.png');
+	background-repeat: round;
+	position: relative;
+}
+
+.bench-objects {
+	background: url('../images/Grey_boards.png') 0px 0px;
+	width: 1207px;
+	height: 404px;
 }

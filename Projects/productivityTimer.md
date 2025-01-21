@@ -2,7 +2,6 @@
 layout: projectDescriptionRetro
 banner: Headers/coffee_cup_insert.html
 screenshotGallery: '{"folderName": "..//assets//images//ProductivityTimerScreenshots", "fileNames": ["screenshot-1.png", "screenshot-2.png", "screenshot-3.png"]}'
-screenshotGallery2: '{&quot;folderName&quot;: &quot;..//assets//images//ProductivityTimerScreenshots&quot;, &quot;fileNames&quot;: [&quot;screenshot-1.png&quot;, &quot;screenshot-2.png&quot;, &quot;screenshot-3.png&quot;]}'
 title: Productivity Timer
 projectTitle: Productivity Timer
 projectMotto: Energizing like a cup of aromatic morning coffee

@@ -115,50 +115,6 @@ function hideGallery (){
     setImage (imageElement);
 }
 
-function dropSugarCube() {
-    let sugarCubeElement = document.getElementById("sugar-cube-id");
-    let coffeeCupElement = document.getElementById("coffee-cup-id");
-
-    runAnimation(sugarCubeElement, "drop-sugar-cube-animation", true);
-    runAnimation(coffeeCupElement, "coffee-cup-stir-animation", true);
-
-    unlockAchievement("sugar-cube");
-}
-
-function runAnimation(element, animationName, withRemoval = false) {
-    if (!element.classList.contains(animationName)){
-        void element.offsetWidth;
-        element.classList.add(animationName); 
-
-        if (withRemoval){
-            setTimeout(() => {
-                element.classList.remove(animationName);
-                void element.offsetWidth;
-            }, getAnimationDuration(element));          
-        }   
-    }
-}
-
-function getAnimationDuration(element){
-    let computedStyle = window.getComputedStyle(element);
-    let animationDuration = computedStyle.animationDuration;        
-    let animationDelay = computedStyle.animationDelay;   
-    return convertSecondsStringToMilliseconds (animationDuration) + convertSecondsStringToMilliseconds (animationDelay);
-}
-
-function convertSecondsStringToMilliseconds (durationInSecondsString){
-    let seconds = 0;
-    let secondsLookUp = "[0-9]*.*[0-9]+[s]";
-    const foundSeconds = durationInSecondsString.match(secondsLookUp);
-    seconds = parseFloat(foundSeconds);
-
-    return convertSecondsToMilliseconds (seconds);
-}
-
-function convertSecondsToMilliseconds (seconds){
-    return seconds * 1000;
-}
-
 function addStyle (element, styleClassName) {
     if (!element.classList.contains (styleClassName)){
         element.classList.add (styleClassName);
@@ -171,28 +127,4 @@ function removeStyle (element, styleClassName) {
         element.classList.remove (styleClassName);
         void element.offsetWidth;
     }
-}
-
-function setCookie(cname, cvalue, exdays = 30) {
-    const date = new Date();
-    date.setTime(date.getTime() + (exdays * 24 * 60 * 60 * 1000));
-
-    let expires = "expires="+ date.toUTCString();
-    document.cookie = cname + "=" + cvalue + "; " + expires + "; path=/";
-}
-  
-function getCookie(cname) {
-    let name = cname + "=";
-    let decodedCookie = decodeURIComponent(document.cookie);
-    let ca = decodedCookie.split(";");
-    for(let i = 0; i <ca.length; i++) {
-      let c = ca[i];
-      while (c.charAt(0) == " ") {
-        c = c.substring(1);
-      }
-      if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length);
-      }
-    }
-    return "";
 }

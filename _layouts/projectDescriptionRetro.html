@@ -5,8 +5,11 @@
     <title>{{ page.title }}</title>
 
     <script src="../assets/js/projectDescription.js"></script>
+    <script src="../assets/js/cookieHandler.js"></script>
+    <script src="../assets/js/animationHandler.js"></script>
+    <script src="../assets/js/achievementHandler.js"></script>
     
-    <link rel="stylesheet" href="../assets/css/projectBannerStyle.css">
+    <link rel="stylesheet" href="../assets/css/projectHeaderStyle.css">
     <link rel="stylesheet" href="../assets/css/projectDescriptionStyle.css">
     <link rel="stylesheet" href="../assets/css/siteWideStyle.css">
 
@@ -34,6 +37,11 @@
           </div>
           <div class="image-on-screen-block">
             <img id="image-id" class="image-style">
+            <div class="accompanying-text-block">
+              <div class="accompanying-text">
+                text example very long  text example very long text example very long text example very long text example very long text example very long text example very long text example very long text example very long text example very long text example very long
+              </div>
+            </div>
           </div>
           <div class="button-gallery">
             <div class="tamagochi-button-block tamagochi-button-gallery-block">
@@ -118,7 +126,12 @@
         {{ page.projectMotto }}
       </div>
     </div> -->
-    <div class="grid-item"></div>
+    <div class="grid-item">
+      <div id="bubble-pop-id-0" class="bubble-pop">
+      </div>
+      <div id="bubble-grow-id-0" class="bubble-grow cursor-pointer"  onclick="popBubble('0')">
+      </div>
+    </div>
     <div class="grid-item content-grid-item inner-grid">
       <div class="inner-grid-item-odd">
         <div class="text-icon-block">

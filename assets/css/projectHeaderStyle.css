@@ -6,8 +6,8 @@
     --main-background-color: #F9F4EDFF;
     --gallery-hint-color: #E08AFF;
     --gallery-block-color: #D1BCF2;
-	--footer-link: url("../images/coffeeFooter.png");
-
+	--accompanying-text-bg-color: rgba(0, 128, 0, 0.3);
+	
 	line-height: normal;
 }
 
@@ -16,20 +16,6 @@ body, html{
 	padding: 0;
 	height: 100%;
 	width: 100%;
-}
-
-.bench-objects {
-	background: url('../images/VendingMachine_ext_2x.png') 0px 0px;
-	width: 1207px;
-	height: 404px;
-}
-
-.top-fill {
-	width: 100%;
-	height: 404px;
-	background: url('../images/boards_fill_2.png');
-	background-repeat: round;
-	position: relative;
 }
 
 .container-top {
@@ -189,6 +175,27 @@ img[src] {
 	width: 671px;
 	height: 525px;
 	align-self: center;
+}
+
+.accompanying-text-block {
+	width: inherit;
+	position: absolute;
+	bottom: 55px;
+	background-color: var(--accompanying-text-bg-color);
+	overflow: hidden;
+	height: auto;
+	max-height: 29px;
+
+	transition: max-height 2s;
+}
+
+.accompanying-text-block:hover{
+	max-height: 300px;
+}
+
+.accompanying-text{
+	color:darkmagenta;
+	font: 20px 'Overpass Mono';
 }
 
 .button-gallery {

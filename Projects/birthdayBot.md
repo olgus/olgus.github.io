@@ -2,6 +2,7 @@
 layout: projectDescriptionRetro
 banner: Headers/bubbles_banner.html
 title: Birthday Bot
+screenshotGallery: '{"folderName": "..//assets//images//BirthdayBotScreenshots", "fileNames": ["screenshot-2.png", "screenshot-3.png"]}'
 projectTitle: Birthday bot
 projectMotto: Bubbly like shaken-up carbonated soda
 motivation: | 
@@ -13,7 +14,7 @@ killerFeatures: |
 importance: |
     First venture into python and writing bots.
 learned: |
-    Set up my first python web application. Wrote braching nested conversation with ConversationHandler.
+    Set up my first python web application. Wrote branching nested conversation with ConversationHandler.
 stack: |
     Python
     'telegram' library
