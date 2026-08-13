@@ -2,7 +2,7 @@
 layout: videoEditingProfile
 banner: Headers/movie_tape_insert.html
 footer: Footers/footerContentCreation.html
-title: VEP
+title: Olga Guselnikova - Digital Content Creator
 fastPacedEditing: | 
     fast-paced editing to match the dynamic gameplay
 dynamicComparison: |
