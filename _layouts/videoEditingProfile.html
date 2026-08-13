@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=VT323|Oxanium|Overpass+Mono">
 </head>
 
-<body onload="onLoad()" onresize="calcBanner()">
+<body>
   <div class="pd-grid-container">
     <div class="grid-item full-width-grid-item">
       <div class="container-movie-tape">
@@ -58,16 +58,15 @@
       <h>Edit examples</h>
       <div class="inner-grid-item inner-grid-item-odd">
         <div>
-          <img loading="lazy" class="gif-preview" src="../assets/images/GIFs/fastPacedEditing.GIF">
+          <img loading="lazy" class="gif-preview" src="../assets/images/GIFs/rotoscoping.GIF">
           <div class="gif-inscription">
-            <a href="https://youtu.be/fsdfDAgRrFM?t=28">
+            <a href="https://youtu.be/qvShWnXvmM4?t=403">
               <img class="youtube-icon" src="../assets/images/ContentCreationIcons/videolink.png" ></img>
             </a>
-            <p class="inscription-text"> ← Watch this moment on youtube</p>
           </div>
         </div>
         <div class="text-section text-left">
-          {{ page.fastPacedEditing | markdownify | newline_to_br }}
+          {{ page.rotoscoping | markdownify | newline_to_br }}
         </div>
       </div>
       <div class="inner-grid-item inner-grid-item-even">
@@ -86,7 +85,7 @@
       <div class="inner-grid-item inner-grid-item-odd">
         <div>
           <img loading="lazy" class="gif-preview" src="../assets/images/GIFs/transform.GIF">
-          <div class="gif-inscription">
+          <div class="gif-inscription inscription-right">
             <a href="https://youtu.be/tUgeRMplu8I?t=58">
               <img class="youtube-icon" src="../assets/images/ContentCreationIcons/videolink.png" ></img>
             </a>
@@ -98,38 +97,12 @@
       </div>
       <div class="inner-grid-item inner-grid-item-even">
         <div class="text-section text-right">
-          {{ page.rotoscoping | markdownify | newline_to_br }}
-        </div>
-        <div>
-          <img loading="lazy" class="gif-preview" src="../assets/images/GIFs/rotoscoping.GIF">
-          <div class="gif-inscription inscription-right">
-            <a href="https://youtu.be/qvShWnXvmM4?t=403">
-              <img class="youtube-icon" src="../assets/images/ContentCreationIcons/videolink.png" ></img>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="inner-grid-item inner-grid-item-odd">
-        <div>
-          <img loading="lazy" class="gif-preview" src="../assets/images/GIFs/colorAlpha.GIF">
-          <div class="gif-inscription">
-            <a href="https://youtu.be/fsdfDAgRrFM?t=785">
-              <img class="youtube-icon" src="../assets/images/ContentCreationIcons/videolink.png" ></img>
-            </a>
-          </div>
-        </div>
-        <div class="text-section text-left">
           {{ page.colorAlpha | markdownify | newline_to_br }}
         </div>
-      </div>
-      <div class="inner-grid-item inner-grid-item-even">
-        <div class="text-section text-right">
-          {{ page.cleanTransitions | markdownify | newline_to_br }}
-        </div>
         <div>
-          <img loading="lazy" class="gif-preview" src="../assets/images/GIFs/cleanTransitions.GIF">
-          <div class="gif-inscription inscription-right">
-            <a href="https://youtu.be/aDSU0hvcI0g?t=941">
+          <img loading="lazy" class="gif-preview" src="../assets/images/GIFs/colorAlpha.GIF">
+          <div class="gif-inscription ">
+            <a href="https://youtu.be/fsdfDAgRrFM?t=785">
               <img class="youtube-icon" src="../assets/images/ContentCreationIcons/videolink.png" ></img>
             </a>
           </div>
