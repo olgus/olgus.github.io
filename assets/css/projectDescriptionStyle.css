@@ -1,0 +1,200 @@
+---
+---
+:root {
+    --main-background-color: #f6f0e7;
+    --footer-link: url("../images/birthdayBotFooter.png");
+	  --text-color: darkmagenta;
+    --header-color: (black);
+}
+
+body, html{
+  margin:0;
+  padding:0;
+  line-height: normal;
+  background-color: var(--main-background-color);
+  height: 100%;
+} 
+
+/* grid starts */
+.pd-grid-container{
+  display: grid;
+  grid-template-columns: 1fr 30% 30% 1fr;
+  grid-template-rows: auto auto auto;
+  background-color: var(--main-background-color);
+  height: 100%;
+}
+
+.grid-item {
+  padding: 0px;
+  margin: 0px;
+}
+
+.header-animation-grid-item{
+  grid-column: 1 / span 2; 
+}
+
+.full-width-grid-item {
+  grid-column: 1 / span 4; 
+}
+
+.header-title-grid-item{
+  grid-column: 3 / span 2; 
+  background-color: var(--header-color);
+}
+
+.footer-grid-item{
+  grid-column: 1 / span 4; 
+  margin-bottom: 0px;
+  margin-top: auto;
+}
+
+.content-grid-item{
+  grid-column: 2 / span 2;
+  margin-top: 20px;
+}
+/* grid ends */
+
+.projectTitle{
+  font: 45px 'VT323', monospace;
+  top: 36px;
+  position: absolute;
+}
+
+.projectMotto {
+	font: 27px 'VT323', monospace;
+	position: absolute;
+	transform: rotate(10deg);
+	margin: 5px;
+}
+
+.stack {
+	font: 23px 'VT323', monospace;
+	position: absolute;
+	transform: rotate(7deg);
+	margin: 0px;
+	top: 120px;
+  left: -4px;
+}
+
+.total {
+	transform: rotate(4deg);
+	float: right;
+	margin-top: 35px;
+}
+
+.receipt {
+	width: 170px;
+	height: 100px;
+	position: relative;
+	top: -167px;
+	right: -904px;
+}
+
+.receipt-overlay {
+	background: url('../images/Receipt.png') 0px 0px;
+	width: 228px;
+	height: 354px;
+	position: absolute;
+	top: -33px;
+	left: -38px;
+}
+
+h3{
+  color: darkolivegreen;
+  text-align: right;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+h3:nth-of-type(even) {
+  text-align: right;
+}
+
+h3:nth-of-type(2n+1) {
+	text-align: left;
+	width: fit-content;
+}
+
+p {
+  color: var(--text-color);
+  font: 20px 'Overpass Mono';
+}
+
+li {
+  color: var(--text-color);
+  font: 20px 'Overpass Mono';
+  list-style-type: square;
+}
+
+ul{
+  margin-top:0; 
+  margin-bottom:0;
+}
+
+.icon {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	vertical-align: -10px;
+}
+
+.icon-motivation {
+	background: url('../images/VendingMachine_2x.png') -50px -1192px;
+  margin-right: 5px;
+}
+
+.icon-features {
+	background: url('../images/VendingMachine_2x.png') -200px -1192px;
+  margin-right: 5px;
+}
+
+.icon-importance {
+	background: url('../images/VendingMachine_2x.png') -0px -1192px;
+  margin-left: 5px;
+}
+
+.icon-learned {
+	background: url('../images/VendingMachine_2x.png') -150px -1192px;
+  margin-left: 5px;
+}
+
+.icon-next {
+	background: url('../images/VendingMachine_2x.png') -250px -1192px;
+  margin-right: 5px;
+}
+
+.text-icon-block{
+  margin-left: auto; 
+  display: block;
+}
+
+.text-header {
+  font: 20px 'Oxanium';
+  display: inline-block;
+  margin-bottom: 15px;
+  color: var(--header-color);
+}
+
+.text-left{
+  text-align: left;
+  padding-right: 200px;
+}
+
+.text-right{
+  text-align: right;
+  padding-left: 200px;
+}
+
+.inner-grid{
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto auto;
+}
+
+.inner-grid-item-odd{
+  text-align: left;
+}
+
+.inner-grid-item-even{
+  text-align: right;
+}

@@ -1,0 +1,10 @@
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+vendor
+*.kra
+_layouts/notes.md
+Gemfile.lock
+Gemfile
+site.code-workspace

@@ -1,0 +1,969 @@
+---
+---
+:root {
+    --vm-background-color: rgb(185, 216, 255);
+	--vm-bottom-color: #E5ADE6;
+    --vm-contrast-color: rgb(185, 0, 255);
+}
+
+body, html{
+	margin: 0;
+	padding: 0;
+	background-color: var(--vm-background-color);
+	height: 100%;
+	width: 100%;
+}
+
+.container-h { 
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	overflow: hidden;
+	flex-direction: column;
+	height: 100%;
+}
+
+.container-v { 
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.container-v-top{
+	align-items: flex-end;
+}
+
+.container-v-bottom{
+	height: 100%;
+}
+
+.main-background {
+	background-color: var(--vm-background-color);
+}
+
+.cover {
+	z-index: 5;
+}
+
+/* flex section start */
+.top-free-space{
+	width: 100%;
+	flex: 1 1 0px;
+
+	align-content: flex-end;
+	display: flex;
+	justify-content: end;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.bottom-free-space{
+	width: 100%;
+	flex: 1 1 0px;
+}
+
+.left-free-space{
+	width: 31px;
+	height: 100%;
+}
+
+.cat-free-space{
+	width: 1539px;
+	height: 147px;
+  	position: relative;
+}
+
+.cat-top {
+	background: url('../images/VendingMachine_2x.png') -529px -41px;
+	width: 1510px;
+	height: 150px;
+}
+
+.vm-bottom{
+	height: 100%;
+  	width: 1541px;
+	background-repeat: repeat-y;
+  	position: relative;
+  	margin: auto;
+}
+
+.vm-bottom-image {
+	width: 1510px;
+	height: 100%;
+  	position: relative;
+	background: url('../images/vmBottom.png');
+}
+/* flex sections end */
+
+/* grid starts NOT NEEDED ANYMORE? */
+.grid-containter{
+	display: grid;
+	grid-template-columns: auto auto auto;
+	grid-template-rows: auto auto auto;
+	height: 100%;
+	justify-content: center;
+}
+
+.grid-filler-row{
+	grid-row: 1 / span 3; 
+	width: auto;
+	height: auto;
+}
+
+.grid-filler-item{
+	width: auto;
+	height: auto;
+}
+
+.grid-center-item{
+	grid-column: 2 / span 1; 
+	grid-row: 2 / span 1; 
+	width: auto;
+	height: auto;
+}
+/* grid ends */
+
+.bg{
+  height: 703px;
+  width: 1541px;
+  position: relative;
+  margin: auto;
+}
+
+/* stock starts */
+.stock {
+	width: 1510px;
+	height: 900px;
+	background: url('../images/VendingMachine_2x.png') -529px -187px;
+	transform-origin: 50% 0%;
+  	position: relative;
+	z-index: 3;
+
+}
+
+@keyframes walk-in-animation-stock {
+	from { transform: scale(0.9, 0.9); }
+	to { transform: scale(1, 1); }
+  }
+/* stock ends */
+
+/* sakura branches start */
+.top-sakura-branch {
+	width: 551px;
+	height: 253px;
+	background: url('../images/VendingMachine_2x.png') -374px -1188px;
+	position: relative;
+	top: -229px;
+	left: -100px;
+  	animation-name: sakura-branch-animation-2;
+	transform-origin: 0% 50%;
+	z-index: 10;
+}
+
+.top-sakura-branch-shadow {
+	width: 418px;
+	height: 229px;
+	background: url('../images/VendingMachine_2x.png') -911px -1695px;
+	position: relative;
+	top: 47px;
+	left: 26px;
+	animation-name: sakura-branch-animation-2, 
+	top-sakura-branch-shadow-animation;
+	transform-origin: 0% 50%;
+	z-index: 4;
+}
+
+.bottom-sakura-branch {
+	width: 517px;
+	height: 256px;
+	background: url('../images/VendingMachine_2x.png') -928px -1185px;
+	position: relative;
+	top: -206px;
+	left: -90px;
+	animation-name: sakura-branch-animation-2;
+	transform-origin: 0% 50%;
+	z-index: 10;
+}
+
+.bottom-sakura-branch-shadow {
+	width: 415px;
+	height: 232px;
+	background: url('../images/VendingMachine_2x.png') -492px -1695px;
+	position: relative;
+	top: 102px;
+	left: 0px;
+	animation-name: sakura-branch-animation-2, bottom-sakura-branch-shadow-animation;
+	transform-origin: 0% 50%;
+	z-index: 4;
+}
+
+.sakura-branches{
+	height: 100%;
+	overflow-y: hidden;
+	position: absolute;
+	pointer-events: none;
+	width: 100%;
+}
+
+.sakura-branches-animation {
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+	animation-delay: 0s;
+}
+
+.sakura-branches-animation-in {
+	animation-direction: normal;
+	animation-duration: 2s;
+}
+
+.sakura-branches-animation-out {
+	animation-direction: reverse;
+	animation-duration: 1.5s;
+}
+
+@keyframes sakura-branch-animation {
+  from { transform: scale(1.4, 1.4); }
+  to { transform: scale(1, 1); }
+}
+
+@keyframes sakura-branch-animation-2 {
+	from { transform: scale(0.7, 0.7); }
+	to { transform: scale(1, 1); }
+}
+
+@keyframes top-sakura-branch-shadow-animation{
+	from { width: 371px; background-position-x: -958px; }
+	to { width: 418px;  background-position-x: -911px; }
+}
+
+@keyframes bottom-sakura-branch-shadow-animation{
+	from { width: 363px; background-position-x: -544px;  }
+	to { width: 415px;  background-position-x: -492px; }
+}
+
+.shadow-cover{
+	width: 100px;
+	height: 100%;
+	flex: 1 1 0px;
+}
+/* sakura branches end */
+
+/* sakura-petal starts */
+.sakura-petal {
+	background: url('../images/VendingMachine_2x.png') -299px -339px;
+	width: 80px;
+	height: 21px;
+	position: absolute;
+	z-index: 10;
+	animation: sakura-petal-animation 2s steps(17) 0s infinite normal forwards, sakura-petal-fall-animation 5s linear 0s infinite normal forwards;
+	opacity: 0%;
+}
+
+.sakura-petal-0 {
+	top: 80px;
+	left: 236px;
+}
+
+.sakura-petal-1 {
+	top: 150px;
+	left: 21px;
+}
+
+.sakura-petal-2 {
+	top: 70px;
+	left: 296px;
+}
+
+@keyframes sakura-petal-animation {
+	from { background-position-y: -339px; }
+	to { background-position-y: -712px; }
+}
+
+@keyframes sakura-petal-fall-animation {
+	to { top: 100%; }
+}
+/* sakura-petal ends */
+
+/* product display starts */
+.product-display-light-reflection {
+	width: 472px;
+	height: 377px;
+	background: url('../images/VendingMachine_2x.png') -1448px -1111px;
+	position: absolute;
+	top: 196px;
+	left: 454px;
+	z-index: 10;
+	pointer-events: none;
+}
+/* product display ends */
+
+/* cat tail starts */
+.cat-tail {
+	height: 153px;
+	width: 171px;
+	background: url('../images/Cat_tail.png') 0px 0px;
+	position: absolute;
+	top: 28px;
+	left: 1175px;
+	transform-origin: 50% 0%;
+}
+
+.cat-tail-move {
+	animation: steps(11) 1.5s 1 0s cat-tail-animation;
+}
+
+@keyframes cat-tail-animation{
+	0%  {background-position-x: 0px;}
+	100% {background-position-x: -1892px;}
+}
+
+.tail-reflection {
+	top: 70px;
+	left: 1186px;
+	opacity: 35%;
+	background: url('../images/Cat_tail.png') 0px -43px;
+	height: 110px;
+}
+/*cat tail ends */
+
+/* light pole starts */
+.light-pole-block {
+	z-index: 20;
+	position: absolute;
+	left: auto;
+	right: 0px;
+	top: 0px;
+	height: 100%;
+	overflow: hidden;
+	box-sizing: border-box;
+	padding-left: 12px;
+	padding-right: 11px;
+	width: auto;
+}
+
+.light-pole {
+	width: 148px;
+	height: 957px;
+	animation-name: walk-in-animation-pole;
+	transform-origin: 0% 0%;
+	position: relative;
+	left: 0px;
+	top: 0px;
+}
+
+.light-pole-hint{
+	width: 148px;
+	height: 943px;
+	transform-origin: 0% 0%;
+	transform: scale(1.1, 1.1); 
+	position: relative;
+	left: -10px;
+	top: 0px;
+}
+
+.light-pole-bg {
+	background: url('../images/VendingMachine_2x.png') -0px -136px;
+}
+
+.light-pole-bottom {
+	background: url('../images/light-pole-bottom.png');
+	background-repeat: repeat-y;
+	animation-name: walk-in-animation-pole;
+	transform-origin: 0% 0%;
+	height: 100%;
+	margin-left: 10px;
+	width: 148px;
+}
+
+.light-pole-animation {
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+	animation-delay: 0s;
+}
+
+.light-pole-animation-in {
+	animation-direction: normal;
+	animation-duration: 2s;
+}
+
+.light-pole-animation-out {
+	animation-direction: reverse;
+	animation-duration: 1.5s;
+}
+
+@keyframes walk-in-animation-pole {
+	from { transform: scale(1.0, 1.0); left: 50px; }
+	to { transform: scale(1.1, 1.1); left: 0px; }
+}
+/* light pole ends */
+
+/* coin slot starts */
+.coin-slot {
+	left: 337px;
+	top: 483px;
+	position: absolute;
+	width: 37px;
+	height: 71px;
+	overflow: hidden;
+}
+
+.coin-highlight-icon {
+	width: 47px;
+	height: 71px;
+	background: url('../images/VendingMachine_2x.png') -264px -0px;
+	position: absolute;
+	left: -10px;
+}
+
+.coin-icon {
+	width: 23px;
+	height: 47px;
+	background: url('../images/VendingMachine_2x.png') -0px -1896px;
+	position: absolute;
+	top: 12px;
+	left: 2px;
+}
+
+.coin-animation {
+	animation: insert-coin-animation 1s linear 0s 1 normal forwards;
+}
+
+.coin-cursor-hint {
+	top: 506px;
+	left: 336px;
+}
+
+@keyframes insert-coin-animation {
+	from { left: 2px; }
+	to { left: -27px; }
+}
+/* coin slot ends */
+
+/* handle starts */
+.handle {
+	width: 83px;
+	height: 41px;
+	position: absolute;
+	left: 345px;
+	top: 556px;
+}
+
+.handle-highlight {
+	width: 109px;
+	height: 65px;
+	background: url('../images/VendingMachine_2x.png') -144px -662px;
+	position: relative;
+	top: -54px;
+	left: -12px;
+}
+
+.handle-icon {
+	width: 83px;
+	height: 41px;
+	background: url('../images/VendingMachine_2x.png') -0px -1945px;
+	position: relative;
+}
+/* handle ends */
+
+/* productivity timer starts */
+.productivity-timer {
+	width: 91px;
+	height: 173px;
+	position: absolute;
+	top: 102px;
+	left: 504px;
+}
+
+.productivity-timer-icon {
+	background: url('../images/VendingMachine_2x.png') -312px 0px;
+	width: 72px;
+	height: 159px;
+	position: absolute;
+	top: 11px;
+	left: 11px;
+}
+
+.productivity-timer-highlight {
+	width: 94px;
+	height: 175px;
+	background: url('../images/VendingMachine_2x.png') -1357px -1695px;
+}
+/* productivity timer ends */
+
+/* pen guin bot starts */
+.pen-guin-bot {
+	width: 119px;
+	height: 209px;
+	position: absolute;
+	top: 66px;
+	left: 628px;
+}
+
+.pen-guin-bot-highlight {
+	width: 118px;
+	height: 208px;
+	background: url('../images/VendingMachine_2x.png') -1455px -1694px;
+}
+/* pen guin bot ends */
+
+/* python scripts starts */
+.python-scripts {
+	width: 91px;
+	height: 173px;
+	position: absolute;
+	top: 102px;
+	left: 772px;
+}
+
+.python-scripts-highlight {
+	width: 94px;
+	height: 175px;
+	background: url('../images/VendingMachine_2x.png') -1357px -1695px;
+}
+/* python scripts ends */
+
+/* item light starts */
+.light-item {
+	width: 102px;
+	height: 48px;
+	position: absolute;
+}
+/* item light starts */
+
+/* item in stock light starts */
+.light-in-stock {
+	width: 102px;
+	height: 46px;
+	background: url('../images/VendingMachine_2x.png') -1693px -1697px;
+	top: -26px;
+	left: 0px;
+	position: relative;
+}
+
+.in-stock {
+	width: 63px;
+	height: 26px;
+	background: url('../images/VendingMachine_2x.png') -385px -68px;
+	position: relative;
+	top: 10px;
+	left: 21px;
+}
+/* item in stock light ends */
+
+/* item out of stock light starts */
+.out-of-stock {
+	width: 63px;
+	height: 26px;
+	background: url('../images/VendingMachine_2x.png') -385px -94px;
+	position: relative;
+	top: 10px;
+	left: 21px;
+}
+
+.light-out-of-stock {
+	width: 102px;
+	height: 48px;
+	background: url('../images/VendingMachine_2x.png') -1693px -1747px;
+	position: relative;
+	top: -26px;
+	left: 0px;
+}
+
+.top-shelf{
+	top: 261px;
+}
+
+.top-shelf-1 {
+	left: 498px;
+}
+
+.top-shelf-2 {
+	left: 632px;
+}
+
+.top-shelf-3 {
+	left: 766px;
+}
+
+.top-shelf-4 {
+	left: 901px;
+}
+
+.top-shelf-5 {
+	left: 1033px;
+}
+
+.top-shelf-6 {
+	left: 1162px;
+}
+
+.top-shelf-7 {
+	left: 1287px;
+}
+
+.bottom-shelf {
+	top: 487px;
+}
+
+.bottom-shelf-1 {
+	left: 499px;
+}
+
+.bottom-shelf-2 {
+	left: 632px;
+}
+
+.bottom-shelf-3 {
+	left: 767px;
+}
+
+.bottom-shelf-4 {
+	left: 900px;
+}
+
+.bottom-shelf-5 {
+	left: 1035px;
+}
+
+.bottom-shelf-6 {
+	left: 1164px;
+}
+
+.bottom-shelf-7 {
+	left: 1287px;
+}
+
+.light-blink{
+	animation: light-blink-animation 20s linear 0s infinite normal forwards;
+}
+
+@keyframes light-blink-animation {
+	0% { opacity: 100%; }
+	9.7% { opacity: 100%; }
+	10% { opacity: 0%; }
+	10.3% { opacity: 100%; }
+	28.7% { opacity: 100%; }
+	29% { opacity: 0%; }
+	29.3% { opacity: 100%; }
+	68.7% { opacity: 100%; }
+	69% { opacity: 0%; }
+	69.3% { opacity: 100%; }
+	71.8% { opacity: 100%; }
+	72% { opacity: 0%; }
+	72.3% { opacity: 100%; }
+	100% { opacity: 100%; }
+}
+/* item out of stock light ends */
+
+/* stock stickers start */
+.new-sticker {
+	width: 101px;
+	height: 67px;
+	background: url('../images/VendingMachine_2x.png') -385px -0px;
+	position: absolute;
+	top: 81px;
+	left: 540px;
+	pointer-events: none;
+	transform: rotate(21deg);
+	z-index: 30;
+}
+
+.coming-soon-sticker {
+	width: 108px;
+	height: 50px;
+	background: url('../images/VendingMachine_2x.png') -84px -1946px;
+	position: absolute;
+	top: 97px;
+	left: 890px;
+	pointer-events: none;
+	transform: rotate(-13deg);
+	z-index: 30;
+}
+/* stock stickers end */
+
+/* links start */
+.email-highlight {
+	width: 115px;
+	height: 147px;
+	background: url('../images/VendingMachine_2x.png') -149px -0px;
+	position: absolute;
+	top: 30px;
+	left: -12px;
+}
+
+.github-icon {
+	width: 122px;
+	height: 175px;
+	background: url('../images/VendingMachine_2x.png') -295px -161px;
+	position: relative;
+	top: 169px;
+	left: 21px;
+}
+
+.github-highlight {
+	width: 145px;
+	height: 197px;
+	background: url('../images/VendingMachine_2x.png') -148px -148px;
+	position: absolute;
+	top: 156px;
+	left: 8px;
+}
+
+.linkedin-highlight {
+	width: 59px;
+	height: 127px;
+	background: url('../images/VendingMachine_2x.png') -148px -350px;
+	position: absolute;
+	top: 358px;
+	left: -2px;
+}
+
+.cv-pdf-highlight {
+	width: 142px;
+	height: 183px;
+	background: url('../images/VendingMachine_2x.png') -149px -478px;
+	position: absolute;
+	top: 480px;
+	left: 1px;
+}
+/* links end */
+
+/* display starts */
+.display {
+	position: relative;
+	width: 325px;
+	height: 274px;
+	top: 159px;
+	left: 76px;
+	overflow: hidden;
+}
+
+.display-text-field {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	box-sizing: border-box;
+	padding: 12px;
+	padding-right: 20px;
+	text-align: justify;
+
+	-webkit-user-select: none; /* Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
+}
+
+.typewriter-effect{
+	font: 24px 'VT323', monospace;
+	background: linear-gradient(-90deg, #FEC0EBFF 10px, #0000 0) 
+	  15px 21px/calc(var(--textLength)*1ch) 3px,
+	  linear-gradient(#FEC0EBFF 0 0) 
+	  0 0/calc(var(--textLength)*1ch) 200%;
+	background-size: calc(var(--textLength)*1ch) 200%;
+	background-repeat: no-repeat;
+	animation: cursor-animation 0.3s steps(1) infinite alternate, 
+	  typing-animation calc(var(--textLength)*.05s) steps(var(--textLength));
+	position: relative;
+	width: 120px;
+	z-index: 6;
+	top: 6px;
+	left: 6px;
+}
+
+.display-screen-clip {
+	color:#0000;
+	-webkit-background-clip: padding-box, text;
+	background-clip: padding-box, text;
+}
+
+.display-screen-light-reflection{
+	position: absolute;
+	top: 140px;
+	z-index: 10;
+}
+
+@keyframes typing-animation {
+	from { background-size: 0 200% }
+}
+
+@keyframes cursor-animation {
+	50% { background-position: 0px -100%, 0px 0px }
+}
+/* display ends */
+
+/* help starts */
+.help-sticker {
+	width: 232px;
+	height: 182px;
+	position: absolute;
+	top: 463px;
+	left: 51px;
+}
+
+.help-icon {
+	width: 208px;
+	height: 160px;
+	background: url('../images/VendingMachine_2x.png') -148px -728px;
+	position: relative;
+	top: 10px;
+	left: 12px;
+}
+
+.help-highlight {
+	width: 232px;
+	height: 183px;
+	background: url('../images/VendingMachine_2x.png') -148px -889px;
+	position: relative;
+	top: -161px;
+	left: 0px;
+}
+/* help ends */
+
+/* navigation hints start */
+.continue-label {
+	font: 31px 'VT323', monospace;
+	color: #FEC0EBFF;
+	position: absolute;
+	z-index: 110;
+	bottom: 10px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.cursor-hint {
+	width: 26px;
+  	height: 26px;
+  	background: url('../images/VendingMachine_2x.png') -43px -1082px;
+
+	position: absolute;
+	z-index: 30;
+	animation: blink 0.5s linear 0s infinite normal forwards;
+}
+
+.coin-hint {
+	position: absolute;
+	top: 409px;
+	left: 350px;
+	opacity: 0%;
+}
+
+.project-hint {
+	position: absolute;
+	top: 284px;
+	left: 571px;
+}
+
+.links-hint {
+	position: absolute;
+	top: 106px;
+	right: 148px;
+	opacity: 0%;
+}
+
+.handle-hint {
+	position: absolute;
+	top: 572px;
+	left: 420px;
+	opacity: 0%;
+}
+
+.stock-hints {
+	width: 1510px;
+	height: 900px;
+	transform-origin: 50% 0%;
+  	position: relative;
+}
+
+.help-hint{
+	position: absolute;
+	top: 384px;
+	left: 14px;
+	opacity: 0%;
+}
+
+.hint-hidden{
+	opacity: 0%;
+}
+/* navigation hints end */
+
+/* loading project page starts */
+.rotating-coin-section {
+	margin: auto;
+	height: 300px;
+}
+
+.rotating-coin{
+	background: url('../images/VendingMachine_2x.png') -24px -1896px;
+	width: 47px;
+	height: 47px;
+	top: 110px;
+	animation: steps(9) 0.5s infinite 0s forwards rotating-coin-animation;
+		/* linear 0.99s 1 0s forwards dropping-coin-animation; */
+	position: relative;
+}
+
+@keyframes rotating-coin-animation{
+	0%  {background-position-x: -24px;}
+	100% {background-position-x: -456px;}
+}
+
+@keyframes dropping-coin-animation{
+	0%  { top: 0px; }
+	100% { top: 250px; }
+}
+
+.loading-label{
+	font: 31px 'VT323', monospace;
+	color: #FEC0EBFF;
+	position: absolute;
+	z-index: 110;
+	bottom: 10px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+/* loading project page ends */
+
+/* achievements section starts */
+.icon-achievements {
+	background: url('../images/VendingMachine_2x.png') -200px -1193px;
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	left: 1289px;
+	top: 635px;
+	z-index: 35;
+}
+
+.achievements {
+	min-width: 300px;
+	min-height: 300px;
+	z-index: 200;
+	display: block;
+	margin: auto;
+}
+/* achievements section ends */
+
+/* common styles start */
+@keyframes show-highlight {
+	from { opacity: 0%; }
+	to { opacity: 100%; }
+}
+
+.highlight {
+	opacity: 0%;
+}
+
+.highlight:hover {
+	animation: show-highlight 0.7s linear 0s 1 normal forwards;
+}
+
+.float-on-top {
+	z-index: 200;
+}
+/* common styles end */
+
+.show{
+	display: flex;
+}

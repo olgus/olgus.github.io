@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>{{ page.title }}</title>
+
+    <script src="../assets/js/projectDescription.js"></script>
+    <script src="../assets/js/cookieHandler.js"></script>
+    <script src="../assets/js/animationHandler.js"></script>
+    <script src="../assets/js/achievementHandler.js"></script>
+    
+    <link rel="stylesheet" href="../assets/css/projectHeaderStyle.css">
+    <link rel="stylesheet" href="../assets/css/projectDescriptionStyle.css">
+    <link rel="stylesheet" href="../assets/css/siteWideStyle.css">
+
+    <link rel="stylesheet" href="../assets/css/achievementsStyle.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=VT323|Oxanium|Overpass+Mono">
+</head>
+
+<body onload="onLoad('{{ page.screenshotGallery | xml_escape }}')">
+  <div id="overlay-id" class="overlay">
+    <div class="colored-overlay" onclick="hideGallery()">
+    </div>
+    <div class="pop-up-gallery-block">
+      <div class="pop-up-gallery-bg">
+        <div class="pop-up-gallery-items">
+          <div class="button-gallery">
+            <div class="tamagochi-button-block tamagochi-button-gallery-block">
+              <div class="tamagochi-button cursor-pointer"
+                onmousedown="tamagochiButtonNextImageOnMouseDown(this, 'left', false)"
+                onmouseup="tamagochiButtonOnMouseUp(this)"
+                onmouseenter="tamagochiButtonOnMouseEnter(this)"
+                onmouseleave="tamagochiButtonOnMouseLeave(this)">
+                <div class="tamagochi-button-left-image">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="screen-block-cl">
+            <div class="image-on-screen-block">
+              <img id="image-id" class="image-style">
+              <div class="accompanying-text-block">
+                <div class="accompanying-text">
+                  text example very long  text example very long text example very long text example very long text example very long text example very long text example very long text example very long text example very long text example very long text example very long
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="button-gallery">
+            <div class="tamagochi-button-block tamagochi-button-gallery-block">
+              <div class="tamagochi-button cursor-pointer"
+                onmousedown="tamagochiButtonNextImageOnMouseDown(this, 'right', false)"
+                onmouseup="tamagochiButtonOnMouseUp(this)"
+                onmouseenter="tamagochiButtonOnMouseEnter(this)"
+                onmouseleave="tamagochiButtonOnMouseLeave(this)">
+                <div class="tamagochi-button-right-image">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+  <!-- <div id="achievement-overlay-id" class="overlay display-on">
+    <div class="achievement-unlocked-pop-up">
+      <div class="pack-of-cards"></div>
+    </div>
+  </div> -->
+  <div class="pd-grid-container">
+    <div class="grid-item full-width-grid-item">
+        <div class="container-top">
+            <div class="fill-section">
+                <div class="top-fill">
+                  {% if page.banner %}
+                    {% include {{ page.banner }} %}
+                  {% endif %}
+                </div>
+            </div>
+            <div class="main-section">
+                <div class="bench-objects">
+                    <div class="gallery-preview-block">
+                      <div class="image-on-the-screen-preview">
+                        <div id="preview-gallery-hint-id" class="preview-gallery-hint">Press arrow buttons below to view screenshots
+                        <br>
+                        Press middle button to enlarge a gallery</div>
+                        <img id="image-preview-id" class="image-style">
+                      </div>
+
+                      <div class="tamagochi-button-block tamagochi-button-preview-block-left">
+                        <div class="tamagochi-button cursor-pointer" 
+                          onmousedown="tamagochiButtonNextImageOnMouseDown(this, 'left', true)"
+                          onmouseup="tamagochiButtonOnMouseUp(this)"
+                          onmouseenter="tamagochiButtonOnMouseEnter(this)"
+                          onmouseleave="tamagochiButtonOnMouseLeave(this)">
+                          <div class="tamagochi-button-left-image">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="tamagochi-button-block tamagochi-button-preview-block-right">
+                        <div class="tamagochi-button cursor-pointer"
+                          onmousedown="tamagochiButtonNextImageOnMouseDown(this, 'right', true)"
+                          onmouseup="tamagochiButtonOnMouseUp(this)"
+                          onmouseenter="tamagochiButtonOnMouseEnter(this)"
+                          onmouseleave="tamagochiButtonOnMouseLeave(this)">
+                          <div class="tamagochi-button-right-image">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="tamagochi-button-block tamagochi-button-preview-block-close-up">
+                        <div class="tamagochi-button cursor-pointer"
+                          id="tamagochi-button-preview-block-close-up-id"
+                          onmousedown="tamagochiButtonCloseUpOnMouseDown(this)"
+                          onmouseup="tamagochiButtonOnMouseUp(this)"
+                          onmouseenter="tamagochiButtonOnMouseEnter(this)"
+                          onmouseleave="tamagochiButtonOnMouseLeave(this)">
+                          <div class="tamagochi-button-close-up-image">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="light-reflection-small tamagochi-reflection"></div>
+                    </div>
+                    <div class="receipt">
+                      <div class="receipt-overlay"></div>
+                      <div class="projectMotto">
+                        {{ page.projectMotto }}
+                      </div>
+                      <div class="stack" id="stack-id">
+                        <script>setStack('{{ page.stack }}');
+                        </script>
+                        
+                      </div> 
+                    </div>
+                </div>          
+            </div>
+        </div>
+    </div>
+    <div class="grid-item">
+      {% if page.leftPanel %}
+        {% include {{ page.leftPanel }} %}
+      {% endif %}
+    </div>
+    <div class="grid-item content-grid-item inner-grid">
+      <div class="inner-grid-item-odd">
+        <div class="text-icon-block">
+          <div class="icon icon-motivation"></div>
+          <div class="text-header">Motivation</div>
+        </div>
+        <div class="text-section text-left">{{ page.motivation | markdownify | newline_to_br }}</div>
+      </div>
+      <div class="inner-grid-item-even">
+        <div class="text-icon-block">
+          <div class="text-header">Why this project was important?</div>
+          <div class="icon icon-importance"></div>
+        </div>
+        <div class="text-section text-right">{{ page.importance | markdownify | newline_to_br }}</div>
+      </div>
+      <div class="inner-grid-item-odd">
+        <div class="text-icon-block">
+          <div class="icon icon-features"></div>
+          <div class="text-header">Killer features</div>
+        </div>
+        <div class="text-section text-left">{{ page.killerFeatures | markdownify | newline_to_br }}</div>
+      </div>  
+      <div class="inner-grid-item-even">
+        <div class="text-icon-block">
+          <div class="text-header">What have I learned?</div>
+          <div class="icon icon-learned"></div>
+        </div>
+        <div class="text-section text-right">{{ page.learned | markdownify | newline_to_br }}</div>
+      </div>
+      {% if page.next %}
+      <div class="inner-grid-item-odd">
+        <div class="text-icon-block">
+          <div class="icon icon-next"></div>
+          <div class="text-header">What's next?</div>
+        </div>
+        <div class="text-section text-left">{{ page.next | markdownify | newline_to_br }}</div>
+      </div>
+      {% endif %}
+    </div>
+    <div class="grid-item">
+      {% if page.rightPanel %}
+        {% include {{ page.rightPanel }} %}
+      {% endif %}
+    </div>
+    <div class="grid-item footer-grid-item">
+        {%include Footers/footerWithLinks.html %}
+    </div>   
+  </div>
+</body>
+
+</html>
