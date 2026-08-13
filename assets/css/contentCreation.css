@@ -65,8 +65,12 @@ body, html{
 }
 /* grid ends */
 
-.overflowable{
-	overflow-y: visible;
+.container-movie-tape {
+  display: flex;
+  justify-content: center;
+  overflow-y: visible;
+  z-index: 5;
+  position: relative;
 }
 
 .text-icon-block{
