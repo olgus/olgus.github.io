@@ -68,9 +68,11 @@ body, html{
 .container-movie-tape {
   display: flex;
   justify-content: center;
-  overflow-y: visible;
   z-index: 5;
   position: relative;
+  padding-bottom: 100px;
+  margin-bottom: -100px;
+  overflow: hidden;
 }
 
 .text-icon-block{
