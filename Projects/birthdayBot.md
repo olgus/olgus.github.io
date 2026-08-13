@@ -1,10 +1,14 @@
 ---
 layout: projectDescriptionRetro
-banner: Headers/bubbles_banner.html
+banner: Headers/bubbles_insert.html
+footer: Footers/footerWithLinks.html
+leftPanel: Sections/bubblesLeftPanel.html
+rightPanel: Sections/bubblesRightPanel.html
 title: Birthday Bot
 screenshotGallery: '{"folderName": "..//assets//images//BirthdayBotScreenshots", "fileNames": ["screenshot-2.png", "screenshot-3.png"]}'
 projectTitle: Birthday bot
 projectMotto: Bubbly like shaken-up carbonated soda
+stack: '["Python", "telegram lib"]'
 motivation: | 
     Creating personalized gift to set up a treasure hunt for a hidden hand-made plushie.
 killerFeatures: | 
@@ -15,9 +19,7 @@ importance: |
     First venture into python and writing bots.
 learned: |
     Set up my first python web application. Wrote branching nested conversation with ConversationHandler.
-stack: |
-    Python
-    'telegram' library
+    
 ---
 
 ### Motivation

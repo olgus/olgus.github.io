@@ -1,0 +1,118 @@
+---
+---
+.footer-links{
+    background-color: var(--header-color);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+@media (min-aspect-ratio: 1/1) {
+    .footer-links{
+        float: right;
+        display: flex;
+    }
+}
+
+@media (min-aspect-ratio: 1/1) {
+    .footer-bgc {
+        background: url('../images/footerContentCreation.png');
+
+        width: 100%;
+        height: 102px;
+        background-repeat: repeat-x;
+        margin-top: 35px;
+    }
+}
+
+@media (max-aspect-ratio: 1/1) {
+    .footer-bgc {
+        background: linear-gradient(180deg,rgba(255, 227, 77, 0.43) 0%, rgba(0, 0, 0, 1) 100%);
+
+        width: 100%;
+        background-repeat: repeat-x;
+        margin-top: 35px;
+    }
+}
+
+@media (min-aspect-ratio: 1/1) {
+.icon-footer {
+	width: 50px;
+	height: 50px;
+	margin: 3px;
+	margin-top: 40px;
+	cursor: pointer;
+}
+}
+
+@media (max-aspect-ratio: 1/1) {
+    .icon-footer {
+        object-fit: fill;
+        width: 4vh;
+        margin: 3px;
+	    padding-top: 0.5vh;
+	    padding-bottom: 0.5vh;
+	    cursor: pointer;
+    }
+}
+
+.icon-footer-left {
+	float: left;
+}
+
+@media (max-aspect-ratio: 1/1) {
+    .icon-footer-right {
+	    margin-left: 15vw;
+    }
+}
+
+@media (min-aspect-ratio: 1/1) {
+    .icon-footer-right {
+	float: right;
+}
+}
+
+@media (min-aspect-ratio: 1/1) {
+    .footer-text {
+        display: none;
+    }
+}
+
+@media (max-aspect-ratio: 1/1) {
+    .footer-text {
+	margin-left: 8px;
+	margin: auto;
+	margin-left: 10px;
+    color: var(--mixing-color);
+    font: 1.5rem 'Overpass Mono';
+}
+}
+
+@media (max-aspect-ratio: 1/1) {
+   .footer-link{
+    display: flex;
+   }
+}
+
+.icon-email{
+    background: url('../images/ContentCreationFooterIcons.png') -0px 0px;
+}
+
+.icon-github{
+    background: url('../images/ContentCreationFooterIcons.png') -50px 0px;
+}
+
+.icon-linkedin{
+    background: url('../images/ContentCreationFooterIcons.png') -100px 0px;
+}
+
+.icon-cv-download{
+    background: url('../images/ContentCreationFooterIcons.png') -150px 0px;
+}
+
+.icon-back-to-main{
+    background: url('../images/ContentCreationFooterIcons.png') -200px 0px;
+}
+
+.icon-youtube{
+    background: url('../images/ContentCreationFooterIcons.png') -250px 0px;
+}

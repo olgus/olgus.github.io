@@ -1,26 +1,45 @@
 ---
 ---
 :root {
-    --header-color: #CCE9FAFF;
     --main-background-color: rgb(247, 252, 255);
     --footer-link: url("../images/birthdayBotFooter.png");
 }
 
-.header-bgc {
-	height: 198px;
-	width: 100%;
-	/* background-color: var(--header-color); */
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.bubble-block {
+	width: 46px;
+	height: 43px;
+	position: relative;
+	display: none;
+	top: 100%;
+}
+
+.float-animation {
+	animation: movX 2s cubic-bezier(.45,.05,.55,.95) 0s infinite alternate both, 
+	movY 10s linear 0s infinite normal forwards;
+	display: block;
 }
 
 .bubbles {
-	height: 196px;
-	width: 372px;
-	/* background: url('../images/VendingMachine_2x.png') 0px -1246px; */
-	margin-bottom: 0px;
-  	margin-top: auto;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+
+.bubble-column {
+	height: 100%;
+	width: 80px;
+	position: relative;
+	flex: 0.1 1 80px;
+}
+
+@keyframes movX {
+	from { left: 0%; }
+	to { left: calc(100% - 46px); }
+}
+
+@keyframes movY {
+	100% { top: -7%; }
 }
 
 .bubble-pop {
@@ -28,9 +47,6 @@
 	height: 43px;
 	background: url('../images/VendingMachine_2x.png') -0px -1445px;
 	position: relative;
-	z-index: 10;
-	top: 75px;
-	left: 202px;
 }
 
 .bubble-grow {
@@ -38,9 +54,7 @@
 	height: 43px;
 	background: url('../images/VendingMachine_2x.png') -554px -1445px;
 	position: relative;
-	z-index: 10;
-	top: -11px;
-	left: 204px;
+	top: -43px;
 }
 
 .bubble-grow-animation {
@@ -48,18 +62,7 @@
 }
 
 .bubble-pop-animation {
-	animation: bubble-pop 5s steps(12) 0s 1;
-}
-
-.bubble-pop + .bubble-pop {
-	top: 70px;
-	left: 116px;
-}
-
-.bubble-grow + .bubble-grow {
-	background: url('../images/VendingMachine_2x.png') -554px -1445px;
-	top: -16px;
-	left: 118px;
+	animation: bubble-pop 5s steps(12) 0s 1 normal forwards;
 }
 
 @keyframes bubble-pop{
@@ -85,4 +88,33 @@
 	background: url('../images/Grey_boards.png') 0px 0px;
 	width: 1207px;
 	height: 404px;
+}
+
+.bottle-block {
+	position: absolute;
+	top: 55px;
+	left: 192px;
+}
+
+.bottle {
+	background: url('../images/VendingMachine_ext_2x.png') 0px -1513px;
+	width: 219px;
+	height: 229px;
+	position: relative;
+	top: -110px;
+	left: 0px;
+}
+
+.bottle-shadow {
+	background: url('../images/VendingMachine_ext_2x.png') -220px -1513px;
+	width: 177px;
+	height: 110px;
+	position: relative;
+	top: 168px;
+	left: 34px;
+}
+
+.projectMotto {
+	font: 26px 'VT323', monospace;
+	margin-top: 10px;
 }

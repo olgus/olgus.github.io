@@ -5,8 +5,10 @@
     --header-color: #C09775FF;
     --main-background-color: #F9F4EDFF;
     --gallery-hint-color: #E08AFF;
-    --gallery-block-color: #D1BCF2;
-	--accompanying-text-bg-color: rgba(0, 128, 0, 0.3);
+    --screen-block-color: #372652;
+    --gallery-image-color: #5b5a5c;
+	--accompanying-text-bg-color: rgba(255, 255, 255, 0.985);
+    --accompanying-text-color: rgb(134, 9, 134);
 	
 	line-height: normal;
 }
@@ -22,6 +24,8 @@ body, html{
 	display: flex;
 	justify-content: center;
 	overflow: hidden;
+	z-index: 5;
+	position: relative;
 }
 
 .fill-section {
@@ -171,21 +175,30 @@ img[src] {
 	position: relative;
 }
 
-.image-on-screen-block {
-	width: 671px;
-	height: 525px;
+.screen-block-cl {
+	width: 832px;
+	height: 564px;
 	align-self: center;
+	background-color: var(--screen-block-color);
+	align-content: center;
+}
+
+.image-on-screen-block {
+	width: 673px;
+	height: 524px;
+	background-color: var(--gallery-image-color);
+	margin: auto;
 }
 
 .accompanying-text-block {
 	width: inherit;
 	position: absolute;
-	bottom: 55px;
-	background-color: var(--accompanying-text-bg-color);
+	bottom: 57px;
 	overflow: hidden;
 	height: auto;
-	max-height: 29px;
-
+	max-height: 45px;
+	background-image: linear-gradient(#ff000000, var(--accompanying-text-bg-color));
+	
 	transition: max-height 2s;
 }
 
@@ -193,9 +206,10 @@ img[src] {
 	max-height: 300px;
 }
 
-.accompanying-text{
-	color:darkmagenta;
+.accompanying-text {
+	color: var(--accompanying-text-color);
 	font: 20px 'Overpass Mono';
+	margin-top: 17px;
 }
 
 .button-gallery {

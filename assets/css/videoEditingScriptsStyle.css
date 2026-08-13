@@ -1,0 +1,36 @@
+---
+---
+:root {
+    --main-background-color: #454343;
+    --footer-link: url("../images/redBoardsFooter.png");
+	--text-color: #e5e96f;
+    --header-color: #e8715e;
+}
+
+.top-fill {
+	width: 100%;
+	height: 404px;
+	background: url('../images/boards_fill_red.png');
+	background-repeat: round;
+	position: relative;
+}
+
+.bench-objects {
+	background: url('../images/Red_boards.png') 0px 0px;
+	width: 1207px;
+	height: 404px;
+}
+
+.icon, .icon-footer {
+	filter: hue-rotate(58deg);
+}
+
+.pop-up-gallery-bg {
+	background: url('../images/Red_boards.png') -0px -872px;
+}
+
+.projectMotto {
+	font: 31px 'VT323', monospace;
+	margin-top: 14px;
+	margin-left: 14px;
+}

@@ -3,3 +3,8 @@ _site
 .jekyll-cache
 .jekyll-metadata
 vendor
+*.kra
+_layouts/notes.md
+Gemfile.lock
+Gemfile
+site.code-workspace

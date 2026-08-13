@@ -43,6 +43,12 @@ function tamagochiButtonCloseUpOnMouseDown (button) {
     let overlayElement = document.getElementById("overlay-id");
     addStyle (overlayElement, "display-flex");
 
+    // in case of opening a gallery before hiding the hint
+    if (currentImageIndex == -1) {
+        hideHint();
+        currentImageIndex = 0;
+    }
+
     // set image
     let imageElement = document.getElementById("image-id");
     setImage (imageElement);
@@ -106,6 +112,11 @@ function hideGallery (){
     // hide overlay
     let overlayElement = document.getElementById("overlay-id");
     removeStyle (overlayElement, "display-flex");
+
+    // update tamagotchi button
+    let closeUpButton = document.getElementById("tamagochi-button-preview-block-close-up-id");
+    tamagochiButtonOnMouseUp(closeUpButton);
+    tamagochiButtonOnMouseLeave(closeUpButton);
     
     // show scroll
     removeStyle (document.body, "scroll-off");
@@ -127,4 +138,39 @@ function removeStyle (element, styleClassName) {
         element.classList.remove (styleClassName);
         void element.offsetWidth;
     }
+}
+
+function setStack (stack) {
+    let jsonStack = JSON.parse(stack);
+    let filling = "..............";
+    let space = "&nbsp";
+    let htmlText = "";
+    let i = 0;
+    let linesCount = 0;
+    for (i; i < jsonStack.length; i++) {
+        let addingLine = "";
+        if (i >= 2) {
+            addingLine = addingLine + space;
+        }
+        addingLine = addingLine + jsonStack[i];
+        let addingLineLength = jsonStack[i].length;
+
+        htmlText = htmlText
+            + addingLine
+            + filling.substring(0, filling.length - addingLineLength)
+            + "x1"
+            ;
+            
+        linesCount = linesCount + 1;
+        htmlText = htmlText + "<br>";
+    }      
+
+    for (let j = linesCount; j < 4; j++) {
+        htmlText = htmlText + "<br>";
+    }
+
+    htmlText = htmlText + "<div class=\"total\">Total: " + jsonStack.length + "</div>";
+
+    let stackElement = document.getElementById("stack-id");
+    stackElement.innerHTML = htmlText;
 }

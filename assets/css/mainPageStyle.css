@@ -49,9 +49,12 @@ body, html{
 .top-free-space{
 	width: 100%;
 	flex: 1 1 0px;
-	
-	overflow: hidden;
+
 	align-content: flex-end;
+	display: flex;
+	justify-content: end;
+	flex-direction: column;
+	overflow: hidden;
 }
 
 .bottom-free-space{
@@ -65,20 +68,30 @@ body, html{
 }
 
 .cat-free-space{
-	width: 1510px;
+	width: 1539px;
 	height: 147px;
-	position: absolute;
+  	position: relative;
 }
 
 .cat-top {
 	background: url('../images/VendingMachine_2x.png') -529px -41px;
+	width: 1510px;
+	height: 150px;
 }
 
 .vm-bottom{
-	width: 1541px;
 	height: 100%;
-	background: url('../images/vmBottom.png');
+  	width: 1541px;
 	background-repeat: repeat-y;
+  	position: relative;
+  	margin: auto;
+}
+
+.vm-bottom-image {
+	width: 1510px;
+	height: 100%;
+  	position: relative;
+	background: url('../images/vmBottom.png');
 }
 /* flex sections end */
 
@@ -124,6 +137,8 @@ body, html{
 	background: url('../images/VendingMachine_2x.png') -529px -187px;
 	transform-origin: 50% 0%;
   	position: relative;
+	z-index: 3;
+
 }
 
 @keyframes walk-in-animation-stock {
@@ -493,21 +508,21 @@ body, html{
 }
 /* pen guin bot ends */
 
-/* shopping app placeholder starts */
-.shopping-app-placeholder {
-	width: 119px;
-	height: 209px;
+/* python scripts starts */
+.python-scripts {
+	width: 91px;
+	height: 173px;
 	position: absolute;
-	top: 61px;
-	left: 758px;
+	top: 102px;
+	left: 772px;
 }
 
-.shopping-app-placeholder-highlight {
-	width: 112px;
-	height: 209px;
-	background: url('../images/VendingMachine_2x.png') -1577px -1695px;
+.python-scripts-highlight {
+	width: 94px;
+	height: 175px;
+	background: url('../images/VendingMachine_2x.png') -1357px -1695px;
 }
-/* shopping app placeholder ends */
+/* python scripts ends */
 
 /* item light starts */
 .light-item {
@@ -661,7 +676,7 @@ body, html{
 	background: url('../images/VendingMachine_2x.png') -84px -1946px;
 	position: absolute;
 	top: 97px;
-	left: 759px;
+	left: 890px;
 	pointer-events: none;
 	transform: rotate(-13deg);
 	z-index: 30;
@@ -875,9 +890,7 @@ body, html{
 
 /* loading project page starts */
 .rotating-coin-section {
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 12%;
+	margin: auto;
 	height: 300px;
 }
 
@@ -924,7 +937,6 @@ body, html{
 }
 
 .achievements {
-	background-color: var(--vm-contrast-color);
 	min-width: 300px;
 	min-height: 300px;
 	z-index: 200;

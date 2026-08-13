@@ -197,6 +197,8 @@ function openProjectPage() {
             case 1:
                 pageName = "../Projects/birthdayBot";
                 break;
+            case 2:
+                pageName = "../Projects/videoEditingScripts";
             default:
                 break;
         }

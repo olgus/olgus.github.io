@@ -81,4 +81,9 @@
 	width: 1207px;
 	height: 404px;
 }
+
+.projectMotto {
+	font: 23px 'VT323', monospace;
+	margin-top: 13px;
+}
 /* coffee section ends */

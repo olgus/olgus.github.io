@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="../assets/css/projectDescriptionStyle.css">
     <link rel="stylesheet" href="../assets/css/siteWideStyle.css">
 
+    <link rel="stylesheet" href="../assets/css/achievementsStyle.css">
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=VT323|Oxanium|Overpass+Mono">
 </head>
 
@@ -35,11 +37,13 @@
               </div>
             </div>
           </div>
-          <div class="image-on-screen-block">
-            <img id="image-id" class="image-style">
-            <div class="accompanying-text-block">
-              <div class="accompanying-text">
-                text example very long  text example very long text example very long text example very long text example very long text example very long text example very long text example very long text example very long text example very long text example very long
+          <div class="screen-block-cl">
+            <div class="image-on-screen-block">
+              <img id="image-id" class="image-style">
+              <div class="accompanying-text-block">
+                <div class="accompanying-text">
+                  text example very long  text example very long text example very long text example very long text example very long text example very long text example very long text example very long text example very long text example very long text example very long
+                </div>
               </div>
             </div>
           </div>
@@ -59,6 +63,11 @@
       </div>
     </div>
   </div> 
+  <!-- <div id="achievement-overlay-id" class="overlay display-on">
+    <div class="achievement-unlocked-pop-up">
+      <div class="pack-of-cards"></div>
+    </div>
+  </div> -->
   <div class="pd-grid-container">
     <div class="grid-item full-width-grid-item">
         <div class="container-top">
@@ -103,6 +112,7 @@
 
                       <div class="tamagochi-button-block tamagochi-button-preview-block-close-up">
                         <div class="tamagochi-button cursor-pointer"
+                          id="tamagochi-button-preview-block-close-up-id"
                           onmousedown="tamagochiButtonCloseUpOnMouseDown(this)"
                           onmouseup="tamagochiButtonOnMouseUp(this)"
                           onmouseenter="tamagochiButtonOnMouseEnter(this)"
@@ -114,23 +124,25 @@
 
                       <div class="light-reflection-small tamagochi-reflection"></div>
                     </div>
+                    <div class="receipt">
+                      <div class="receipt-overlay"></div>
+                      <div class="projectMotto">
+                        {{ page.projectMotto }}
+                      </div>
+                      <div class="stack" id="stack-id">
+                        <script>setStack('{{ page.stack }}');
+                        </script>
+                        
+                      </div> 
+                    </div>
                 </div>          
             </div>
         </div>
     </div>
-    <!-- <div class="grid-item header-title-grid-item">
-      <div class="projectTitle">
-        {{ page.projectTitle }}
-      </div>
-      <div class="projectMotto">
-        {{ page.projectMotto }}
-      </div>
-    </div> -->
     <div class="grid-item">
-      <div id="bubble-pop-id-0" class="bubble-pop">
-      </div>
-      <div id="bubble-grow-id-0" class="bubble-grow cursor-pointer"  onclick="popBubble('0')">
-      </div>
+      {% if page.leftPanel %}
+        {% include {{ page.leftPanel }} %}
+      {% endif %}
     </div>
     <div class="grid-item content-grid-item inner-grid">
       <div class="inner-grid-item-odd">
@@ -171,7 +183,11 @@
       </div>
       {% endif %}
     </div>
-    <div class="grid-item"></div>
+    <div class="grid-item">
+      {% if page.rightPanel %}
+        {% include {{ page.rightPanel }} %}
+      {% endif %}
+    </div>
     <div class="grid-item footer-grid-item">
         {%include Footers/footerWithLinks.html %}
     </div>   

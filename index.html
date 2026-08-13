@@ -6,10 +6,10 @@ layout: none
 <html>
 
 <head>
-    <script src="../assets/js/vm-script.js"></script>
-    <script src="../assets/js/cookieHandler.js"></script>
-    <script src="../assets/js/animationHandler.js"></script>
-    <script src="../assets/js/achievementHandler.js"></script>
+    <script src="assets/js/vm-script.js"></script>
+    <script src="assets/js/cookieHandler.js"></script>
+    <script src="assets/js/animationHandler.js"></script>
+    <script src="assets/js/achievementHandler.js"></script>
 
     <link rel="stylesheet" href="assets/css/siteWideStyle.css">
     <link rel="stylesheet" href="assets/css/mainPageStyle.css">
@@ -111,9 +111,11 @@ layout: none
     <div class="container-h">
         <div class="top-free-space main-background cover">
             <div class="container-v container-v-top">
-                <div class="left-free-space main-background"></div>
                 <div class="shadow-cover main-background"></div>
-                <div class="cat-free-space cat-top"></div>
+                <div class="left-free-space main-background cover"></div>
+                <div class="cat-free-space">
+                    <div class="cat-top"></div>
+                </div>
                 <div class="shadow-cover main-background"></div>
             </div>
         </div>
@@ -157,15 +159,18 @@ layout: none
                         </div>
                     </div>
                     <div class="light-item top-shelf top-shelf-2">
+                        <div class="in-stock"></div>  
+                        <div class="light-in-stock"></div>
+                    </div>
+                    <div class="python-scripts cursor-pointer">
+                        <div class="python-scripts-highlight highlight" onclick="showProjectDescription(2)">
+                        </div>
+                    </div>
+                    <div class="light-item top-shelf top-shelf-3">
                         <div class="in-stock"></div>
                         <div class="light-in-stock"></div>
                     </div>
                     <div class="coming-soon-sticker"></div>
-                    <div class="shopping-app-placeholder"></div>
-                    <div class="light-item top-shelf top-shelf-3">
-                        <div class="out-of-stock"></div>
-                        <div class="light-out-of-stock"></div>
-                    </div>
                     <div class="light-item top-shelf top-shelf-4">
                         <div class="out-of-stock"></div>
                         <div class="light-out-of-stock"></div>
@@ -219,7 +224,9 @@ layout: none
             <div class="container-v container-v-bottom">
                 <div class="shadow-cover main-background cover"></div>
                 <div class="left-free-space main-background cover"></div>
-                <div class="vm-bottom"></div>
+                <div class="vm-bottom">
+                    <div class="vm-bottom-image"></div>
+                </div>
                 <div class="shadow-cover main-background"></div>
             </div>
         </div>

@@ -1,0 +1,12 @@
+.pack-of-cards {
+	background: url('../images/VendingMachine_ext_2x.png') -760px -872px;
+	width: 271px;
+	height: 47px;
+}
+
+.achievement-unlocked-pop-up {
+	display: flex;
+	justify-content: center;
+	align-items: end;
+	height: inherit;
+}

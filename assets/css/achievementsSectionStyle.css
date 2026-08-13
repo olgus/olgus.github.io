@@ -2,11 +2,6 @@
 ---
 
 .achievements-section {
-    background-color: rgb(185, 0, 255);
-}
-
-.achievements {
-	background-color: var(--vm-contrast-color);
 }
 
 .achievements-title {
@@ -21,4 +16,18 @@
 
 .achievements-description {
     font: 24px 'VT323', monospace;
+}
+
+.receipt-edge {
+    background: url('../images/VendingMachine_ext_2x.png') -760px -872px;
+	width: 541px;
+	height: 47px;
+}
+
+.bottom-edge {
+    transform: rotate(180deg);
+}
+
+.receipt-body {
+    background-color: rgb(255, 255, 255);
 }

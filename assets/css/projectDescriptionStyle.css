@@ -1,5 +1,12 @@
 ---
 ---
+:root {
+    --main-background-color: #f6f0e7;
+    --footer-link: url("../images/birthdayBotFooter.png");
+	  --text-color: darkmagenta;
+    --header-color: (black);
+}
+
 body, html{
   margin:0;
   padding:0;
@@ -53,10 +60,43 @@ body, html{
   position: absolute;
 }
 
-.projectMotto{
-  font: 22px 'VT323', monospace;
-  position: absolute;
-  top: 86px;
+.projectMotto {
+	font: 27px 'VT323', monospace;
+	position: absolute;
+	transform: rotate(10deg);
+	margin: 5px;
+}
+
+.stack {
+	font: 23px 'VT323', monospace;
+	position: absolute;
+	transform: rotate(7deg);
+	margin: 0px;
+	top: 120px;
+  left: -4px;
+}
+
+.total {
+	transform: rotate(4deg);
+	float: right;
+	margin-top: 35px;
+}
+
+.receipt {
+	width: 170px;
+	height: 100px;
+	position: relative;
+	top: -167px;
+	right: -904px;
+}
+
+.receipt-overlay {
+	background: url('../images/Receipt.png') 0px 0px;
+	width: 228px;
+	height: 354px;
+	position: absolute;
+	top: -33px;
+	left: -38px;
 }
 
 h3{
@@ -76,12 +116,12 @@ h3:nth-of-type(2n+1) {
 }
 
 p {
-  color:darkmagenta;
+  color: var(--text-color);
   font: 20px 'Overpass Mono';
 }
 
 li {
-  color:darkmagenta;
+  color: var(--text-color);
   font: 20px 'Overpass Mono';
   list-style-type: square;
 }
@@ -132,6 +172,7 @@ ul{
   font: 20px 'Oxanium';
   display: inline-block;
   margin-bottom: 15px;
+  color: var(--header-color);
 }
 
 .text-left{
