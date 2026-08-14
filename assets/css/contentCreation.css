@@ -70,8 +70,8 @@ body, html{
   justify-content: center;
   z-index: 5;
   position: relative;
-  padding-bottom: 100px;
-  margin-bottom: -100px;
+  padding-bottom: 50px;
+  margin-bottom: -50px;
   overflow: hidden;
 }
 
@@ -201,7 +201,7 @@ body, html{
 @media (min-aspect-ratio: 1/1) {
   @keyframes movieTapeSlide {
 	from { right: 0px; }
-	to { right: 3370px; }
+	to { right: 3370.5px; }
 }
 }
 
@@ -377,7 +377,6 @@ h {
 
 table, td {
   color: var(--text-color);
-  line-height: 1.3;
   vertical-align: top;
   padding: 5px;
 }
@@ -385,12 +384,14 @@ table, td {
 @media (min-aspect-ratio: 1/1){
 table, td  {
     font: 1rem 'Overpass Mono';
+    line-height: 1.3;
 }
 }
 
 @media (max-aspect-ratio: 1/1){
 table, td {
     font: 2rem 'Overpass Mono';
+    line-height: 1.3;
   }
 }
 
